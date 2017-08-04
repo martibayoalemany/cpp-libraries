@@ -1,0 +1,13 @@
+
+
+
+#ifndef CPP14_BASICS_GOOGLETESTINST_H
+#define CPP14_BASICS_GOOGLETESTINST_H
+
+
+class googleTestInst {
+
+};
+
+
+#endif //CPP14_BASICS_GOOGLETESTINST_H
