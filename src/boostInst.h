@@ -1,15 +1,30 @@
-//
-// Created by username on 04.08.17.
-//
 
 #ifndef CPP14_BASICS_BOOSTINST_H
 #define CPP14_BASICS_BOOSTINST_H
 
+#include <iostream>
+using namespace std;
 
 class boostInst {
     public:
-        void main();
+        boostInst() {
+            cout << "Constructor" << endl;
+        }
 
+        boostInst(boostInst& other) {
+            cout << "Copy constructor" << endl;
+        }
+
+        boostInst(boostInst&& other) {
+            cout << "Move constructor" << endl;
+        }
+
+        ~boostInst() {
+            cout << "destructor" << endl;
+        }
+
+        void main();
+        static void checkType();
 };
 
 

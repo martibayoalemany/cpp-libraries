@@ -4,6 +4,7 @@ gmock/1.8.0@meshell/stable
 Boost/1.60.0@lasote/stable
 OpenCV/3.2.0@ohhi/stable
 Qt/5.7.1@osechet/stable
+#vulkan-sdk/1.0.30.0@alaingalvan/testing
 
 [options]
 #gtest:shared=True

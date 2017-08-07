@@ -1,5 +1,0 @@
-//
-
-//
-
-#include "openCv.h"

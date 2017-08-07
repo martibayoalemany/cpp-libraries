@@ -61,10 +61,6 @@
 					<Add directory="/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include"/>
 					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
 					<Add directory="/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/include"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/boostInst.h"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/openCv.h"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/stdLibInst.h"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/test/googleTestInst.h"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
@@ -105,10 +101,6 @@
 					<Add directory="/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include"/>
 					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
 					<Add directory="/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/include"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/boostInst.h"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/openCv.h"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/stdLibInst.h"/>
-					<Add directory="/home/username/src/src-gitlab/cpp-libraries/src/test/googleTestInst.h"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
@@ -126,57 +118,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/include">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtCore">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtDBus">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtGui">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtNetwork">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtOpenGL">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtSql">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtTest">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtWidgets">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtXml">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/include">
-			<Option target="std_lib"/>
-		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/boostInst.cpp">
 			<Option target="std_lib"/>
 		</Unit>
@@ -186,22 +127,16 @@
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/main.cpp">
 			<Option target="std_lib"/>
 		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/openCv.cpp">
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/openCvInst.cpp">
 			<Option target="std_lib"/>
 		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/openCv.h">
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/openCvInst.h">
 			<Option target="std_lib"/>
 		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/stdLibInst.cpp">
 			<Option target="std_lib"/>
 		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/stdLibInst.h">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/test/googleTestInst.cpp">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/test/googleTestInst.h">
 			<Option target="std_lib"/>
 		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/CMakeLists.txt">

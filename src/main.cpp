@@ -1,12 +1,24 @@
 #include <memory>
 #include <algorithm>
+#include <chrono>
 #include "stdLibInst.h"
 #include "boostInst.h"
 using namespace std;
+using namespace chrono;
+
 
 int main(int argc, char **argv) {
+    boostInst::checkType();
     unique_ptr<boostInst> impl = make_unique<boostInst>();
     impl->main();
+
+    using cl = high_resolution_clock ;
+    using cl_point = high_resolution_clock::time_point;
+    cl_point start = cl::now();
+
+    cl_point end = cl::now();
+    cout << duration_cast<seconds>(end - start).count() << endl;
+
 }
 
 int main2(int argc, char **argv) {

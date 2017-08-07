@@ -34,7 +34,7 @@ foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
     include_directories(${var})
 endforeach()
 
-include_directories(${HEADER_FILES})
-add_executable(std_lib ${CONAN_INCLUDE_DIRS} src/stdLibInst.cpp src/main.cpp src/stdLibInst.cpp src/stdLibInst.h src/boostInst.cpp src/boostInst.h src/openCv.cpp src/openCv.h src/test/googleTestInst.cpp src/test/googleTestInst.h src/test/googleTestInst.cpp src/test/googleTestInst.h src/test/googleTestInst.cpp src/test/googleTestInst.h)
+#include_directories(${HEADER_FILES})
+add_executable(std_lib ${SOURCE_FILES})
 target_link_libraries(std_lib ${CONAN_LIBS})
 
