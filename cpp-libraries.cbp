@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cpp-libraries"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\build\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/username/src/src-gitlab/cpp-libraries"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/username/src/src-gitlab/cpp-libraries"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/username/src/src-gitlab/cpp-libraries"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="std_lib">
+				<Option output="/home/username/src/src-gitlab/cpp-libraries/bin/std_lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/username/src/src-gitlab/cpp-libraries/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"/>
+					<Add directory="/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtCore"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtDBus"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtGui"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtNetwork"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtOpenGL"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtSql"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtTest"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtWidgets"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtXml"/>
+					<Add directory="/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
+					<Add directory="/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include"/>
+					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
+					<Add directory="/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 std_lib"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="std_lib/fast">
+				<Option output="/home/username/src/src-gitlab/cpp-libraries/bin/std_lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/username/src/src-gitlab/cpp-libraries/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"/>
+					<Add directory="/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtCore"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtDBus"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtGui"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtNetwork"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtOpenGL"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtSql"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtTest"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtWidgets"/>
+					<Add directory="/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtXml"/>
+					<Add directory="/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
+					<Add directory="/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include"/>
+					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
+					<Add directory="/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 std_lib/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/username/src/src-gitlab/cpp-libraries/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/Base.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/Base.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/boostInst.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/boostInst.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/genericInstance.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/genericInstance.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/main.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/openCvInst.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/openCvInst.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/stdLibInst.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/stdLibInst.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/build/conanbuildinfo.cmake">
+			<Option virtualFolder="CMake Files\build\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
