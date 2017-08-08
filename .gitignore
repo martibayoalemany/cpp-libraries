@@ -4,3 +4,5 @@ bin/*
 CMakeCache.txt
 Makefile
 cmake_install.cmake
+3rdParty
+3rdParty/*

@@ -31,6 +31,8 @@ class stdLibInst {
         ss << m_name << " stdLibInst" << endl;
         return ss.str();
     }
+
+    void vectorsCode();
 };
 
 

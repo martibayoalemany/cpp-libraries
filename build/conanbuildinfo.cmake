@@ -1,13 +1,13 @@
-set(CONAN_BOOST_ROOT "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f")
-set(CONAN_INCLUDE_DIRS_BOOST "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/include")
-set(CONAN_LIB_DIRS_BOOST "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/lib")
-set(CONAN_BIN_DIRS_BOOST "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/bin")
-set(CONAN_RES_DIRS_BOOST "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/res")
-set(CONAN_BUILD_DIRS_BOOST "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/")
-set(CONAN_LIBS_BOOST boost_wave boost_unit_test_framework boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system)
-set(CONAN_DEFINES_BOOST -DBOOST_USE_STATIC_LIBS)
+set(CONAN_BOOST_ROOT "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731")
+set(CONAN_INCLUDE_DIRS_BOOST "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include")
+set(CONAN_LIB_DIRS_BOOST "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/lib")
+set(CONAN_BIN_DIRS_BOOST "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/bin")
+set(CONAN_RES_DIRS_BOOST "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/res")
+set(CONAN_BUILD_DIRS_BOOST "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/")
+set(CONAN_LIBS_BOOST boost_wave boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system)
+set(CONAN_DEFINES_BOOST -DBOOST_ALL_DYN_LINK)
 # COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_BOOST BOOST_USE_STATIC_LIBS)
+set(CONAN_COMPILE_DEFINITIONS_BOOST BOOST_ALL_DYN_LINK)
 
 set(CONAN_C_FLAGS_BOOST "")
 set(CONAN_CXX_FLAGS_BOOST "")
@@ -146,12 +146,12 @@ set(CONAN_SHARED_LINKER_FLAGS_BZIP2_LIST "")
 set(CONAN_EXE_LINKER_FLAGS_BZIP2_LIST "")
 
 
-set(CONAN_ZLIB_ROOT "/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf")
-set(CONAN_INCLUDE_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/include")
-set(CONAN_LIB_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/lib")
-set(CONAN_BIN_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/bin")
-set(CONAN_RES_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/res")
-set(CONAN_BUILD_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/")
+set(CONAN_ZLIB_ROOT "/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459")
+set(CONAN_INCLUDE_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include")
+set(CONAN_LIB_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/lib")
+set(CONAN_BIN_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/bin")
+set(CONAN_RES_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/res")
+set(CONAN_BUILD_DIRS_ZLIB "/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/")
 set(CONAN_LIBS_ZLIB z)
 set(CONAN_DEFINES_ZLIB )
 # COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
@@ -183,7 +183,7 @@ set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/include"
+set(CONAN_INCLUDE_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"
 			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"
 			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include"
 			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent"
@@ -199,37 +199,37 @@ set(CONAN_INCLUDE_DIRS "/home/username/.conan/data/Boost/1.60.0/lasote/stable/pa
 			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"
 			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"
-			"/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/lib"
+			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/lib"
 			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib"
 			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/lib"
 			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib"
 			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/lib"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/lib"
-			"/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/lib" ${CONAN_LIB_DIRS})
-set(CONAN_BIN_DIRS "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/bin"
+			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/lib" ${CONAN_LIB_DIRS})
+set(CONAN_BIN_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/bin"
 			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin"
 			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/bin"
 			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin"
 			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/bin"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/bin"
-			"/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/bin" ${CONAN_BIN_DIRS})
-set(CONAN_RES_DIRS "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/res"
+			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/bin" ${CONAN_BIN_DIRS})
+set(CONAN_RES_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/res"
 			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res"
 			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/res"
 			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res"
 			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/res"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/res"
-			"/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/res" ${CONAN_RES_DIRS})
-set(CONAN_LIBS boost_wave boost_unit_test_framework boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system opencv_calib3d opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect opencv_photo opencv_shape opencv_stitching opencv_superres opencv_video opencv_videoio opencv_videostab opencv_core zlib libjpeg libpng libjasper libtiff libwebp IlmImf ippicv dl Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Sql Qt5Test Qt5Widgets Qt5Xml gmock gmock_main gtest gtest_main pthread bz2 z ${CONAN_LIBS})
-set(CONAN_DEFINES -DBOOST_USE_STATIC_LIBS ${CONAN_DEFINES})
-set(CONAN_CMAKE_MODULE_PATH "/home/username/.conan/data/Boost/1.60.0/lasote/stable/package/812398dc2e419a822e072c8f88108c4cd1ff8d1f/"
+			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/res" ${CONAN_RES_DIRS})
+set(CONAN_LIBS boost_wave boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system opencv_calib3d opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect opencv_photo opencv_shape opencv_stitching opencv_superres opencv_video opencv_videoio opencv_videostab opencv_core zlib libjpeg libpng libjasper libtiff libwebp IlmImf ippicv dl Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Sql Qt5Test Qt5Widgets Qt5Xml gmock gmock_main gtest gtest_main pthread bz2 z ${CONAN_LIBS})
+set(CONAN_DEFINES -DBOOST_ALL_DYN_LINK ${CONAN_DEFINES})
+set(CONAN_CMAKE_MODULE_PATH "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/"
 			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/"
 			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/"
 			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/"
 			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/"
-			"/home/username/.conan/data/zlib/1.2.8/lasote/stable/package/82b1dd29b2e9143665c77ef477100c690d719cbf/" ${CONAN_CMAKE_MODULE_PATH})
+			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/" ${CONAN_CMAKE_MODULE_PATH})
 
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS " ${CONAN_SHARED_LINKER_FLAGS}")

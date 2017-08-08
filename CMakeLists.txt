@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2.2)
 
-project(cpp14_basics)
+project(cpp-libraries)
 
 if (DEBUG)
     MESSAGE("Cmake building in debug mode")
@@ -9,7 +9,6 @@ else()
 endif()
 
 set(CMAKE_CXX_STANDARD 14)
-
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR}/bin)
 
 message("COMPILER_ID : " ${CMAKE_CXX_COMPILER_ID})
@@ -18,7 +17,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(CMAKE_CXX_FLAGS " -g -O0 -Wall -std=c++14")
     MESSAGE("Using clang")
 else()
-    set(GCC_COVERAGE_COMPILE_FLAGS " -g -O0 -Wall -lpthread -std=c++14 -ggdb")
+    set(GCC_COVERAGE_COMPILE_FLAGS " -g -O0 -Wall -lpthread -std=c++1z -ggdb")
     MESSAGE("Not Using clang")
 endif()
 
@@ -27,7 +26,6 @@ conan_basic_setup()
 
 file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
 file(GLOB_RECURSE HEADER_FILES src/*.h )
-file(GLOB TEST_FILES src/test/*)
 
 foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
     MESSAGE("${var}")
@@ -35,6 +33,6 @@ foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
 endforeach()
 
 #include_directories(${HEADER_FILES})
-add_executable(std_lib ${SOURCE_FILES})
+add_executable(std_lib ${SOURCE_FILES} src/genericInstance.cpp src/genericInstance.h src/Base.cpp src/Base.h)
 target_link_libraries(std_lib ${CONAN_LIBS})
 

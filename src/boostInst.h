@@ -1,6 +1,6 @@
 
-#ifndef CPP14_BASICS_BOOSTINST_H
-#define CPP14_BASICS_BOOSTINST_H
+#ifndef CPP_LIBRARIES_BOOSTINST_H
+#define CPP_LIBRARIES_BOOSTINST_H
 
 #include <iostream>
 using namespace std;
@@ -11,17 +11,18 @@ class boostInst {
             cout << "Constructor" << endl;
         }
 
-        boostInst(boostInst& other) {
-            cout << "Copy constructor" << endl;
-        }
+        boostInst(const boostInst& other) noexcept = default;
 
-        boostInst(boostInst&& other) {
+        boostInst(boostInst&& other) noexcept {
             cout << "Move constructor" << endl;
         }
 
         ~boostInst() {
             cout << "destructor" << endl;
         }
+
+        boostInst &operator=(boostInst const & copy) = default;
+        boostInst &operator=(boostInst && move) = default;
 
         void main();
         static void checkType();

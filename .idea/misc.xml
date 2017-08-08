@@ -5,5 +5,12 @@
     <sourceRoots>
       <file path="$PROJECT_DIR$/src" />
     </sourceRoots>
+    <excludeRoots>
+      <file path="$PROJECT_DIR$/3rdParty" />
+      <file path="$PROJECT_DIR$/bin" />
+      <file path="$PROJECT_DIR$/build" />
+      <file path="$PROJECT_DIR$/ci_gitlab_gcc" />
+      <file path="$PROJECT_DIR$/scripts" />
+    </excludeRoots>
   </component>
 </project>
