@@ -4,9 +4,20 @@
 #include <csetjmp>
 #include <csignal>
 
-#include "stdLibInst.h"
-#include "boostInst.h"
-#include "genericInstance.h"
+#include "basics/stdLibInst.h"
+#include "basics/boostInst.h"
+#include "basics/genericInstance.h"
+#include "hpp/custom_exception.hpp"
+
+/**
+ C++ concepts not yet supported at JetBrains IDE
+ @see http://en.cppreference.com/w/cpp/language/constraints
+template <class T, class U = T>
+concept bool Swappable = requires(T&& t, U&& u) {
+    swap(std::forward<T>(t), std::forward<U>(u));
+    swap(std::forward<U>(u), std::forward<T>(t));
+};
+ */
 
 using namespace std;
 using namespace chrono;
@@ -26,8 +37,6 @@ void signal_action_handler(int sig, siginfo_t* info, void*) {
     longjmp(long_jump_reference, 1);
 }
 
-void doMain();
-
 int main(int argc, char **argv) {
     struct sigaction act;
     sigemptyset(&act.sa_mask);
@@ -38,21 +47,25 @@ int main(int argc, char **argv) {
     if (setjmp(long_jump_reference) == 0) {
         doMain();
     }
+
+    return 0;
 }
 
 void doMain() {
-    unique_ptr<genericInstance> inst = make_unique<genericInstance>();
+    {
+        unique_ptr<genericInstance> inst = make_unique<genericInstance>();
 
-    boostInst::checkType();
-    unique_ptr<boostInst> boostImpl = make_unique<boostInst>();
-    boostImpl->main();
+        boostInst::checkType();
+        unique_ptr<boostInst> boostImpl = make_unique<boostInst>();
+        boostImpl->main();
 
-    using cl = high_resolution_clock ;
-    using cl_point = high_resolution_clock::time_point;
-    cl_point start = cl::now();
+        using cl = high_resolution_clock;
+        using cl_point = high_resolution_clock::time_point;
+        cl_point start = cl::now();
 
-    cl_point end = cl::now();
-    cout << duration_cast<seconds>(end - start).count() << endl;
+        cl_point end = cl::now();
+        cout << duration_cast<seconds>(end - start).count() << endl;
+    }
 
     // stdLibInst
     {
@@ -86,15 +99,11 @@ void doMain() {
         impl->main();
     }
 
+    //auto exc = std::make_exception_ptr(new custom_exception());
+    //std::rethrow_exception(exc);
+
     cout << "End of main" << endl;
+
 }
 
-/**
- C++ concepts not yet supported at JetBrains IDE
- @see http://en.cppreference.com/w/cpp/language/constraints
-template <class T, class U = T>
-concept bool Swappable = requires(T&& t, U&& u) {
-    swap(std::forward<T>(t), std::forward<U>(u));
-    swap(std::forward<U>(u), std::forward<T>(t));
-};
- */
+

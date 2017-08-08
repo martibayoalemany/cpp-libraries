@@ -24,7 +24,7 @@ endif()
 include(build/conanbuildinfo.cmake)
 conan_basic_setup()
 
-file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
+file(GLOB_RECURSE SOURCE_FILES src/*.cpp )
 file(GLOB_RECURSE HEADER_FILES src/*.h )
 
 foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
@@ -33,6 +33,6 @@ foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
 endforeach()
 
 #include_directories(${HEADER_FILES})
-add_executable(std_lib ${SOURCE_FILES} src/genericInstance.cpp src/genericInstance.h src/Base.cpp src/Base.h)
-target_link_libraries(std_lib ${CONAN_LIBS})
+add_executable(std_lib ${SOURCE_FILES} src/basics/genericInstance.cpp src/basics/genericInstance.h src/basics/Base.cpp src/basics/Base.h)
+#target_link_libraries(std_lib ${CONAN_LIBS})
 

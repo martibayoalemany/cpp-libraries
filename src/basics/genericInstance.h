@@ -35,14 +35,17 @@ namespace Extensions {
 }
 
 class genericInstance : Base {
+    private:
+        string m_generic_name;
+        string m_generic_name2;
     protected:
         Extensions::Printer<string> m_printer;
     public:
-        genericInstance() {
+        genericInstance() : m_generic_name2("genericInstance"), m_generic_name("genericInstance") {
             m_printer.print("genericInstance constructor");
-            m_name = "Instance 1";
 
             cout << Extensions::IntConstant66  << endl;
+            m_name = "Instance 1";
         }
 
         ~genericInstance() {
