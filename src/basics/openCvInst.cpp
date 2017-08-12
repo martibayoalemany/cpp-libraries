@@ -1,5 +1,1 @@
-//
-
-//
-
 #include "openCvInst.h"

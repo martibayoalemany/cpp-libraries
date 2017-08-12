@@ -1,7 +1,3 @@
-//
-
-//
-
 #ifndef CPP14_BASICS_OPENCV_H
 #define CPP14_BASICS_OPENCV_H
 

@@ -32,7 +32,6 @@ class stdLibInst {
         return ss.str();
     }
 
-    void vectorsCode();
 };
 
 

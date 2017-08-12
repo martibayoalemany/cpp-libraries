@@ -130,12 +130,6 @@
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/boostInst.h">
 			<Option target="std_lib"/>
 		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/genericInstance.cpp">
-			<Option target="std_lib"/>
-		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/genericInstance.h">
-			<Option target="std_lib"/>
-		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/openCvInst.cpp">
 			<Option target="std_lib"/>
 		</Unit>
@@ -148,7 +142,19 @@
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/stdLibInst.h">
 			<Option target="std_lib"/>
 		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/templatesInst.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/templatesInst.h">
+			<Option target="std_lib"/>
+		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/main.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/Utils.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/Utils.h">
 			<Option target="std_lib"/>
 		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/CMakeLists.txt">

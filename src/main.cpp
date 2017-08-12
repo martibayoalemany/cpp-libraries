@@ -3,11 +3,14 @@
 #include <chrono>
 #include <csetjmp>
 #include <csignal>
+#include <fstream>
+#include <vector>
 
 #include "basics/stdLibInst.h"
 #include "basics/boostInst.h"
-#include "basics/genericInstance.h"
+#include "basics/templatesInst.h"
 #include "hpp/custom_exception.hpp"
+#include "utils/Utils.h"
 
 /**
  C++ concepts not yet supported at JetBrains IDE
@@ -37,6 +40,38 @@ void signal_action_handler(int sig, siginfo_t* info, void*) {
     longjmp(long_jump_reference, 1);
 }
 
+/*
+
+int main(int argc, char **argv) {
+    const string  dataFile = Utils::getDataFile();
+    cout << "---- " << dataFile << " " << &dataFile << " " << sizeof(dataFile.c_str()[0]) << endl;
+
+    fstream file;
+    //file.open(dataFile, ios::in);
+
+    const string filename = "/home/username/src/src-gitlab/Algorithms/data/random_numbers.txt";
+    cout << "---- " << filename << " " << &filename << " " << sizeof(filename.c_str()[0]) << endl;
+
+     file.open(filename, ios::in);
+    vector<int> results;
+    string line;
+    using cr_clock = high_resolution_clock;
+    using cr_point = cr_clock::time_point;
+    cr_point start = cr_clock::now();
+    while(getline(file, line)) {
+        int result = atoi(line.c_str());
+        //cout << atoi(line.c_str()) << endl;
+        results.push_back(result);
+    }
+    cr_point end = cr_clock::now();
+    cout << "Read file in " << duration_cast<milliseconds>( end - start ).count() << " ms " << endl;
+    //for_each(results.cbegin(), results.cend(), [] (auto& res) { cout << res << endl;});
+
+}
+ */
+
+// Previous checks
+
 int main(int argc, char **argv) {
     struct sigaction act;
     sigemptyset(&act.sa_mask);
@@ -52,15 +87,15 @@ int main(int argc, char **argv) {
 }
 
 void doMain() {
+    using cl = high_resolution_clock;
+    using cl_point = high_resolution_clock::time_point;
     {
-        unique_ptr<genericInstance> inst = make_unique<genericInstance>();
+        unique_ptr<templatesInst> inst = make_unique<templatesInst>();
 
         boostInst::checkType();
         unique_ptr<boostInst> boostImpl = make_unique<boostInst>();
         boostImpl->main();
 
-        using cl = high_resolution_clock;
-        using cl_point = high_resolution_clock::time_point;
         cl_point start = cl::now();
 
         cl_point end = cl::now();
@@ -71,6 +106,10 @@ void doMain() {
     {
         unique_ptr<stdLibInst> impl = make_unique<stdLibInst>("First");
         cout << impl->toString() << endl;
+        cl_point start = cl::now();
+        impl->main();
+        cl_point end = cl::now();
+        cout << duration_cast<milliseconds>(end - start).count() << endl;
 
         cout << "----" << endl;
         unique_ptr<stdLibInst> impl2 = make_unique<stdLibInst>("Second");
@@ -96,7 +135,6 @@ void doMain() {
         void (*print)(stdLibInst &inst) = [](stdLibInst &inst) { std::cout << inst.toString() << " "; };
         for_each(next(impln2.get(), 0), next(impln2.get(), size), print);
 
-        impl->main();
     }
 
     //auto exc = std::make_exception_ptr(new custom_exception());

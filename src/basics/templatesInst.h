@@ -1,8 +1,5 @@
-
-
-
-#ifndef CPP_LIBRARIES_GENERICINSTANCE_H
-#define CPP_LIBRARIES_GENERICINSTANCE_H
+#ifndef CPP_LIBRARIES_TEMPLATES_INSTANCE_H
+#define CPP_LIBRARIES_TEMPLATES_INSTANCE_H
 
 #include <iostream>
 #include "Base.h"
@@ -17,7 +14,7 @@ namespace Extensions {
     };
 
     template <typename Type, Type value> constexpr Type constant = value;
-    constexpr auto const IntConstant66 = constant<int,66>;
+    constexpr auto const IntConstant66 = constant<int, 66>;
 
     /// Not compiling yet
     // (1)
@@ -34,22 +31,22 @@ namespace Extensions {
 
 }
 
-class genericInstance : Base {
+class templatesInst : Base {
     private:
         string m_generic_name;
         string m_generic_name2;
     protected:
         Extensions::Printer<string> m_printer;
     public:
-        genericInstance() : m_generic_name2("genericInstance"), m_generic_name("genericInstance") {
-            m_printer.print("genericInstance constructor");
 
+        templatesInst() : m_generic_name2("genericInstance"), m_generic_name("templatesInst") {
+            m_printer.print("templatesInst constructor");
             cout << Extensions::IntConstant66  << endl;
-            m_name = "Instance 1";
+            m_name = "templatesInst 1";
         }
 
-        ~genericInstance() {
-            cout << "genericInstance destructor" << endl;
+        ~templatesInst() {
+            cout << "templatesInst destructor" << endl;
         }
 
         Base &operator=(const Base& base2) override {

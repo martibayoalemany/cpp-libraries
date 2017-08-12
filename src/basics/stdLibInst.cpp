@@ -1,5 +1,6 @@
 #include "stdLibInst.h"
 
+#include <regex>
 #include <vector>
 #include <bitset>
 #include <array>
@@ -13,11 +14,18 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <fstream>
+#include <zconf.h>
+#include <sys/param.h>
+#include <boost/iostreams/filtering_streambuf.hpp>
+#include <boost/iostreams/copy.hpp>
+#include <boost/iostreams/filter/gzip.hpp>
 
 using namespace std;
 using namespace chrono;
+using namespace boost;
 
-void stdLibInst::vectorsCode() {
+void stdLibInst::main() {
+
     cout << "----- > vector" << endl;
     vector<int> vec = {1, 2, 3, 4, 5};
     for_each(vec.begin(), vec.end(), [](int i) { cout << i << "\t"; });
@@ -41,12 +49,12 @@ void stdLibInst::vectorsCode() {
         for (int i = 20; i < 30; i++)
             search_for.push_back(cs[i]);
 
-        auto result = find_first_of(cs.begin(), cs.end(), search_for.begin(), search_for.end());
+        auto result = find_first_of(cs.cbegin(), cs.cend(), search_for.begin(), search_for.end());
 
         if (result == cs.end())
             cout << " No elements found" << endl;
         else if (result != cs.end())
-            cout << " Found a match at " << distance(cs.begin(), result) << endl;
+            cout << " Found a match at " << distance(cs.cbegin(), result) << endl;
     }
 
     cout << "----- > Merged vectors and search" << endl;
@@ -56,10 +64,8 @@ void stdLibInst::vectorsCode() {
         for (int i = 0; i < 20; i++)
             for_each(as.begin(), as.end(), [&bs](int i) { bs.push_back(i); });
         cout << bs.size() << " / " << bs.max_size() << endl;
-
         auto tmp = search(bs.begin(), bs.end(), as.begin(), as.end());
         cout << "search " << (tmp.base() - as.begin().base()) / sizeof(int) << endl;
-
 
         cout << "----- > Copy if condition" << endl;
 
@@ -69,9 +75,7 @@ void stdLibInst::vectorsCode() {
         cout << " less_than_3" << target.size() << " / " << bs.size() << endl;
         for_each(target.begin(), target.end(), [](int value) { cout << value << endl; });
     }
-}
 
-void stdLibInst::main() {
     cout << "----- > array" << endl;
     array<int, 20> arr = {10, 2};
     for_each(arr.begin(), arr.end(), [](int i) { cout << i << "\t"; });
@@ -144,10 +148,16 @@ void stdLibInst::main() {
         stringstream buffer;
         buffer << textFile.rdbuf();
         textFile.close();
+        string line;
+        while(getline(textFile, line))
+            cout << line << endl;
+
         steady_clock::time_point en_now = steady_clock::now();
 
         cout << " Read file in " << duration_cast<chrono::microseconds>(en_now - st_now).count() << endl;
+
         cout << "----- > string search" << endl;
+
         st_now = steady_clock::now();
         string in = buffer.str();
         cout << " File size : " << in.size() << endl;
@@ -160,6 +170,7 @@ void stdLibInst::main() {
             cout << "The string " << needle << " not found\n";
         en_now = steady_clock::now();
         cout << " Search in file in " << duration_cast<chrono::microseconds>(en_now - st_now).count() << endl;
+
     }
 
     cout << "----- > Map" << endl;
@@ -226,16 +237,67 @@ void stdLibInst::main() {
         system_clock::time_point st_sys_now = system_clock::now();
         steady_clock::time_point st_std_now = steady_clock::now();
         high_resolution_clock::time_point st_high_now = high_resolution_clock::now();
-        vector<int> vector;
-        for (int i = 0; i < 1000000000; i++)
-            vector.push_back(rand());
+        vector<int> v_rand_nums;
+        for (int i = 0; i < 20000000; i++)
+            v_rand_nums.push_back(rand());
 
         system_clock::time_point en_sys_now = system_clock::now();
         steady_clock::time_point en_std_now = steady_clock::now();
         high_resolution_clock::time_point en_high_now = high_resolution_clock::now();
 
-        cout << "system clock : " << duration_cast<seconds>(en_sys_now - st_sys_now).count() << endl;
-        cout << "steady clock : " << duration_cast<seconds>(en_std_now - st_std_now).count() << endl;
-        cout << "high clock : " << duration_cast<seconds>(en_high_now - st_high_now).count() << endl;
+        cout << "system clock : " << duration_cast<milliseconds>(en_sys_now - st_sys_now).count() << endl;
+        cout << "steady clock : " << duration_cast<milliseconds>(en_std_now - st_std_now).count() << endl;
+        cout << "high clock : " << duration_cast<milliseconds>(en_high_now - st_high_now).count() << endl;
+
+        // Read the binary path
+        int len = 10000;
+        char* pBuf = new char[len];
+        char szTmp[32];
+        sprintf(szTmp, "/proc/%d/exe", getpid());
+        int bytes = MIN(readlink(szTmp, pBuf, len), len - 1);
+        if(bytes >= 0)
+            pBuf[bytes] = '\0';
+        cout << pBuf << endl;
+        string binary_path = pBuf;
+        cout << "string " << pBuf << endl;
+
+        // Cut binary path one level
+        regex pieces_regex("(.*)\\/(.*)\\/(.*)", regex_constants::icase);
+        cmatch pieces_match;
+        if (regex_match(binary_path.c_str(), pieces_match, pieces_regex)) {
+            cout << pBuf << '\n';
+            for (size_t i = 0; i < pieces_match.size(); ++i) {
+                std::csub_match sub_match = pieces_match[i];
+                std::string piece = sub_match.str();
+                std::cout << "  submatch " << i << ": " << piece << '\n';
+            }
+        } else {
+            cout << " No match " << endl;
+        }
+
+        stringstream ss;
+        ss << pieces_match[1] << "/data/random_numbers2.gz" << endl;
+        cout <<  ss.str() << endl;
+
+        ofstream dataFile;
+        dataFile.open(ss.str(), ofstream::out | ofstream::binary | ofstream::trunc);
+        if(!dataFile.is_open())
+            throw runtime_error("Not possible to open stream for file");
+
+        // Compression
+        /*
+        iostreams::filtering_streambuf<boost::iostreams::output> out;
+        out.push(iostreams::gzip_compressor());
+        out.push(dataFile);
+        std::ofstream outf(&out);
+
+        using Iter = vector<int>::iterator;
+        for(Iter it = v_rand_nums.begin(); it != v_rand_nums.end(); ++it)
+            outf << *it << '\n';
+        dataFile.close();
+        */
+
     }
+
+
 }

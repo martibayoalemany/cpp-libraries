@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.2.2)
 
 project(cpp-libraries)
 
+set(DEBUG true)
+
 if (DEBUG)
     MESSAGE("Cmake building in debug mode")
 else()
@@ -33,6 +35,6 @@ foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
 endforeach()
 
 #include_directories(${HEADER_FILES})
-add_executable(std_lib ${SOURCE_FILES} src/basics/genericInstance.cpp src/basics/genericInstance.h src/basics/Base.cpp src/basics/Base.h)
+add_executable(std_lib ${SOURCE_FILES} src/basics/templatesInst.cpp src/basics/templatesInst.h src/basics/Base.cpp src/basics/Base.h src/utils/Utils.cpp src/utils/Utils.h)
 #target_link_libraries(std_lib ${CONAN_LIBS})
 
