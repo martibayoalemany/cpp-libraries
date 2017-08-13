@@ -40,19 +40,14 @@ void signal_action_handler(int sig, siginfo_t* info, void*) {
     longjmp(long_jump_reference, 1);
 }
 
-/*
+///*
 
 int main(int argc, char **argv) {
     const string  dataFile = Utils::getDataFile();
     cout << "---- " << dataFile << " " << &dataFile << " " << sizeof(dataFile.c_str()[0]) << endl;
 
     fstream file;
-    //file.open(dataFile, ios::in);
-
-    const string filename = "/home/username/src/src-gitlab/Algorithms/data/random_numbers.txt";
-    cout << "---- " << filename << " " << &filename << " " << sizeof(filename.c_str()[0]) << endl;
-
-     file.open(filename, ios::in);
+    file.open(dataFile, ios::in);
     vector<int> results;
     string line;
     using cr_clock = high_resolution_clock;
@@ -68,11 +63,11 @@ int main(int argc, char **argv) {
     //for_each(results.cbegin(), results.cend(), [] (auto& res) { cout << res << endl;});
 
 }
- */
+ //*/
 
 // Previous checks
 
-int main(int argc, char **argv) {
+int main2(int argc, char **argv) {
     struct sigaction act;
     sigemptyset(&act.sa_mask);
     act.sa_sigaction = signal_action_handler;

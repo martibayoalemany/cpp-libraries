@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.2.2)
 
 project(cpp-libraries)
 
-set(DEBUG true)
+#set(DEBUG true)
+
+MESSAGE(CMAKE_BUILD_TYPE)
 
 if (DEBUG)
     MESSAGE("Cmake building in debug mode")
@@ -22,6 +24,7 @@ else()
     set(GCC_COVERAGE_COMPILE_FLAGS " -g -O0 -Wall -lpthread -std=c++1z -ggdb")
     MESSAGE("Not Using clang")
 endif()
+
 
 include(build/conanbuildinfo.cmake)
 conan_basic_setup()

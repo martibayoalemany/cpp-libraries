@@ -6,3 +6,5 @@ Makefile
 cmake_install.cmake
 3rdParty
 3rdParty/*
+# Too large to upload
+data/random_numbers.txt
