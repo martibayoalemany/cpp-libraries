@@ -2,10 +2,17 @@
 #include <sys/param.h>
 #include <unistd.h>
 #include <regex>
-#include <boost/filesystem.hpp>
+#include <chrono>
+#include <fstream>
+//#include <boost/filesystem.hpp>
 
 using namespace std;
-using fs = boost::filesystem;
+//using fs = boost::filesystem;
+using namespace chrono;
+
+using cl = chrono::high_resolution_clock;
+using cl_point = chrono::high_resolution_clock::time_point;
+
 
 string Utils::getCurrentDir() {
     int len = 10000;
@@ -18,9 +25,26 @@ string Utils::getCurrentDir() {
     return pBuf;
 }
 
+std::vector<int>& Utils::getData() {
+    if( data.size() > 0 ) return Utils::data;
+
+    string dataFile = getDataFile();
+    fstream file;
+    file.open(dataFile, ios::in);
+    string line;
+    cl_point start = cl::now();
+    while (getline(file, line)) {
+        int result = atoi(line.c_str());
+        data.push_back(result);
+    }
+    cl_point end = cl::now();
+    cout << "Read file in " << duration_cast<milliseconds>( end - start ).count() << " ms " << endl;
+    return data;
+}
+
 const string Utils::getDataFile() {
     string curDir = getCurrentDir();
-    cout << curDir << " - > " << fs::file_size(curDir.c_str()) << endl;
+    // cout << curDir << " - > " << fs::file_size(curDir.c_str()) << endl;
     return getDataFile(curDir);
 }
 

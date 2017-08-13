@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"/>
+					<Add directory="/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
 					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
 					<Add directory="/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include"/>
 					<Add directory="/usr/include/c++/6"/>
@@ -71,6 +72,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"/>
+					<Add directory="/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
 					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
 					<Add directory="/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include"/>
 					<Add directory="/usr/include/c++/6"/>
@@ -94,6 +96,12 @@
 			<Option target="std_lib"/>
 		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/Base.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/BoostDi.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/BoostDi.h">
 			<Option target="std_lib"/>
 		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/boostInst.cpp">

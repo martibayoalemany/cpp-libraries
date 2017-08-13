@@ -8,6 +8,7 @@
 
 [requires]
     Boost/1.Y.Z
+    Fruit/2.Y.Z
 
 [options]
 
@@ -22,6 +23,7 @@
 
 [full_requires]
     Boost/1.64.0@inexorgame/stable:ef95892a18529dd911867b4a44198c7e19849731
+    Fruit/2.0.4@thinkrapido/fruit:4cc931e24e37948d83aaaf638aeca02991ff6d08
     bzip2/1.0.6@lasote/stable:880e5642afc26dae7f4019501d6632b3a6dba009
     zlib/1.2.11@lasote/stable:3fc896c7ead7e99000454751b38b866b14fe6459
 

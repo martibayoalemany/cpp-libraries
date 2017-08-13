@@ -47,7 +47,6 @@ class templatesInst : Base {
                           m_generic_name("templatesInst") {
             m_printer.print("templatesInst constructor");
             cout << Extensions::IntConstant66  << endl;
-            cout << Extensions::StrConstant66  << endl;
             // Initialize the protected member of the Base class
             m_name = "templatesInst 1";
         }

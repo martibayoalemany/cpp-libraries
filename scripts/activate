@@ -11,10 +11,17 @@ function run() {
     cd ..
     cmake .
     make
-    bin/cpp_libraries
+    bin/std_lib
 }
 
 function run_gcc_7() {
+  if ! which gcc-7 > /dev/null; then
+    sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+    sudo apt-get update
+    sudo apt-get install gcc-7
+    gcc-7 --version
+  fi
+  
   cmake -DCMAKE_USER_MAKE_RULES_OVERRIDE=gcc_7_compiler.txt
   run
 }

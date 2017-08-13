@@ -32,12 +32,20 @@ conan_basic_setup()
 file(GLOB_RECURSE SOURCE_FILES src/*.cpp )
 file(GLOB_RECURSE HEADER_FILES src/*.h )
 
+list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitInst.cpp)
+list(REMOVE_ITEM HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitInst.h)
+
+foreach(var IN ITEMS ${SOURCE_FILES})
+    MESSAGE("${var}")
+endforeach()
+
 foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
     MESSAGE("${var}")
     include_directories(${var})
 endforeach()
 
 #include_directories(${HEADER_FILES})
-add_executable(std_lib ${SOURCE_FILES} src/basics/templatesInst.cpp src/basics/templatesInst.h src/basics/Base.cpp src/basics/Base.h src/utils/Utils.cpp src/utils/Utils.h)
+add_executable(std_lib ${SOURCE_FILES} ${HEADER_FILES})
+	
 #target_link_libraries(std_lib ${CONAN_LIBS})
 

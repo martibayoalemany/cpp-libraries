@@ -22,11 +22,11 @@ concept bool Swappable = requires(T&& t, U&& u) {
 };
  */
 
-using string = std::string
+using namespace std;
+using namespace chrono;
+
 using cl = chrono::high_resolution_clock;
 using cl_point = chrono::high_resolution_clock::time_point;
-using ms = chrono::milliseconds;
-using s = chrono::seconds;
 
 jmp_buf long_jump_reference;
 
@@ -46,30 +46,27 @@ void signal_action_handler(int sig, siginfo_t* info, void*) {
     longjmp(long_jump_reference, 1);
 }
 
-///*
+void time_it(void(*funct)()) {
+    cl_point start = cl::now();
+    funct();
+    cl_point end = cl::now();
+    cout << duration_cast<milliseconds>(end - start).count() << endl;
 
+}
 int main(int argc, char **argv) {
-    const string  dataFile = Utils::getDataFile();
+    unique_ptr<Utils> utils = make_unique<Utils>();
+    const string  dataFile = utils.get()->getDataFile();
     cout << "---- " << dataFile << " " << &dataFile << " ";
     cout << sizeof(dataFile.c_str()[0]) << endl;
 
-    fstream file;
-    file.open(dataFile, ios::in);
-    vector<int> results;
-    string line;
+    vector<int>& data = utils.get()->getData();
 
-    cl_point start = cl::now();
-    while (getline(file, line)) {
-        int result = atoi(line.c_str());
-        results.push_back(result);
-    }
-    cl_point end = cl::now();
-    cout << "Read file in " << duration_cast<ms>( end - start ).count() << " ms " << endl;
+    vector<int> data2;
+    copy(data.begin(), data.end(), back_inserter(data2));
 
     //for_each(results.cbegin(), results.cend(), [] (auto& res) { cout << res << endl;});
 
 }
- //*/
 
 // Previous checks
 
@@ -99,7 +96,7 @@ void doMain() {
         cl_point start = cl::now();
 
         cl_point end = cl::now();
-        cout << duration_cast<s>(end - start).count() << endl;
+        cout << duration_cast<seconds>(end - start).count() << endl;
     }
 
     // stdLibInst
@@ -109,7 +106,7 @@ void doMain() {
         cl_point start = cl::now();
         impl->main();
         cl_point end = cl::now();
-        cout << duration_cast<ms>(end - start).count() << endl;
+        cout << duration_cast<milliseconds>(end - start).count() << endl;
 
         cout << "----" << endl;
         unique_ptr<stdLibInst> impl2 = make_unique<stdLibInst>("Second");

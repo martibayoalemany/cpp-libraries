@@ -1,7 +1,9 @@
 [requires]
+Boost/1.64.0@inexorgame/stable
+Fruit/2.0.4@thinkrapido/fruit
+
 #googletest/1.8.0@astrohawk/stable
 #gmock/1.8.0@meshell/stable
-Boost/1.64.0@inexorgame/stable
 #OpenCV/3.2.0@ohhi/stable
 #opengl/10.0.10240.0@lasote/vcpkg
 #Qt/5.8.0@osechet/stable

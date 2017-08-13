@@ -21,6 +21,29 @@ set(CONAN_SHARED_LINKER_FLAGS_BOOST_LIST "")
 set(CONAN_EXE_LINKER_FLAGS_BOOST_LIST "")
 
 
+set(CONAN_FRUIT_ROOT "/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08")
+set(CONAN_INCLUDE_DIRS_FRUIT "/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include")
+set(CONAN_LIB_DIRS_FRUIT "/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib")
+set(CONAN_BIN_DIRS_FRUIT "/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin")
+set(CONAN_RES_DIRS_FRUIT "/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res")
+set(CONAN_BUILD_DIRS_FRUIT "/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/")
+set(CONAN_LIBS_FRUIT fruit)
+set(CONAN_DEFINES_FRUIT )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_FRUIT )
+
+set(CONAN_C_FLAGS_FRUIT "")
+set(CONAN_CXX_FLAGS_FRUIT "")
+set(CONAN_SHARED_LINKER_FLAGS_FRUIT "")
+set(CONAN_EXE_LINKER_FLAGS_FRUIT "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_FRUIT_LIST "")
+set(CONAN_CXX_FLAGS_FRUIT_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_FRUIT_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_FRUIT_LIST "")
+
+
 set(CONAN_BZIP2_ROOT "/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009")
 set(CONAN_INCLUDE_DIRS_BZIP2 "/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include")
 set(CONAN_LIB_DIRS_BZIP2 "/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/lib")
@@ -73,7 +96,7 @@ set(CONAN_EXE_LINKER_FLAGS_ZLIB_LIST "")
 set(CONAN_PACKAGE_NAME None)
 set(CONAN_PACKAGE_VERSION None)
 
-set(CONAN_DEPENDENCIES Boost bzip2 zlib)
+set(CONAN_DEPENDENCIES Boost Fruit bzip2 zlib)
 # Storing original command line args (CMake helper) flags
 set(CONAN_CMD_CXX_FLAGS ${CONAN_CXX_FLAGS})
 
@@ -82,20 +105,25 @@ set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
 set(CONAN_INCLUDE_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"
+			"/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include" ${CONAN_INCLUDE_DIRS})
 set(CONAN_LIB_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/lib"
+			"/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/lib"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/lib" ${CONAN_LIB_DIRS})
 set(CONAN_BIN_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/bin"
+			"/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/bin"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/bin" ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/res"
+			"/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/res"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/res" ${CONAN_RES_DIRS})
-set(CONAN_LIBS boost_wave boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system bz2 z ${CONAN_LIBS})
+set(CONAN_LIBS boost_wave boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system fruit bz2 z ${CONAN_LIBS})
 set(CONAN_DEFINES -DBOOST_ALL_DYN_LINK ${CONAN_DEFINES})
 set(CONAN_CMAKE_MODULE_PATH "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/"
+			"/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/" ${CONAN_CMAKE_MODULE_PATH})
 
@@ -147,6 +175,39 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_BOOST_RELEASE_LIST} ${CONAN_CXX_FLAGS_BOOST_RELEASE_LIST}>
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_BOOST_RELEASE_LIST} ${CONAN_CXX_FLAGS_BOOST_RELEASE_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_BOOST_DEBUG_LIST}  ${CONAN_CXX_FLAGS_BOOST_DEBUG_LIST}>)
+ 
+
+    conan_find_libraries_abs_path("${CONAN_LIBS_FRUIT}" "${CONAN_LIB_DIRS_FRUIT}"
+                                  CONAN_FULLPATH_LIBS_FRUIT)
+    conan_find_libraries_abs_path("${CONAN_LIBS_FRUIT_DEBUG}" "${CONAN_LIB_DIRS_FRUIT_DEBUG}"
+                                  CONAN_FULLPATH_LIBS_FRUIT_DEBUG)
+    conan_find_libraries_abs_path("${CONAN_LIBS_FRUIT_RELEASE}" "${CONAN_LIB_DIRS_FRUIT_RELEASE}"
+                                  CONAN_FULLPATH_LIBS_FRUIT_RELEASE)
+
+    add_library(CONAN_PKG::Fruit INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::Fruit PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_FRUIT} ${CONAN_SHARED_LINKER_FLAGS_FRUIT_LIST} ${CONAN_EXE_LINKER_FLAGS_FRUIT_LIST}
+                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_FRUIT_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_FRUIT_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_FRUIT_RELEASE_LIST}>
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_FRUIT_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_FRUIT_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_FRUIT_RELEASE_LIST}>
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_FRUIT_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_FRUIT_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_FRUIT_RELEASE_LIST}>
+                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_FRUIT_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_FRUIT_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_FRUIT_DEBUG_LIST}>
+                                                                 )
+    set_property(TARGET CONAN_PKG::Fruit PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_FRUIT}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_FRUIT_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_FRUIT_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_FRUIT_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_FRUIT_DEBUG}>)
+    set_property(TARGET CONAN_PKG::Fruit PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_FRUIT}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_FRUIT_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_FRUIT_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_FRUIT_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_FRUIT_DEBUG}>)
+    set_property(TARGET CONAN_PKG::Fruit PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_FRUIT_LIST} ${CONAN_CXX_FLAGS_FRUIT_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_FRUIT_RELEASE_LIST} ${CONAN_CXX_FLAGS_FRUIT_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_FRUIT_RELEASE_LIST} ${CONAN_CXX_FLAGS_FRUIT_RELEASE_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_FRUIT_RELEASE_LIST} ${CONAN_CXX_FLAGS_FRUIT_RELEASE_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_FRUIT_DEBUG_LIST}  ${CONAN_CXX_FLAGS_FRUIT_DEBUG_LIST}>)
  
 
     conan_find_libraries_abs_path("${CONAN_LIBS_BZIP2}" "${CONAN_LIB_DIRS_BZIP2}"
@@ -214,7 +275,7 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_CXX_FLAGS_ZLIB_RELEASE_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_ZLIB_DEBUG_LIST}  ${CONAN_CXX_FLAGS_ZLIB_DEBUG_LIST}>)
  
-    set(CONAN_TARGETS CONAN_PKG::Boost CONAN_PKG::bzip2 CONAN_PKG::zlib)
+    set(CONAN_TARGETS CONAN_PKG::Boost CONAN_PKG::Fruit CONAN_PKG::bzip2 CONAN_PKG::zlib)
 
 endmacro()
 
