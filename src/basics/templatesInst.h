@@ -1,47 +1,54 @@
-#ifndef CPP_LIBRARIES_TEMPLATES_INSTANCE_H
-#define CPP_LIBRARIES_TEMPLATES_INSTANCE_H
+#pragma  once
 
+#include <string>
 #include <iostream>
 #include "Base.h"
 
 using namespace std;
 
 namespace Extensions {
-    template<class T>
-    class Printer {
-        public:
-            void print(T msg) { cout << msg << endl;  }
-    };
 
-    template <typename Type, Type value> constexpr Type constant = value;
-    constexpr auto const IntConstant66 = constant<int, 66>;
+template<class T> class Printer {
 
-    /// Not compiling yet
-    // (1)
-    // template <auto value> constexpr auto constant2 = value;
-    // constexpr auto const IntConstant66_2 = constant2<66>;
+    public:
+        void print(T msg) { cout << msg << endl;  }
+};
 
-    // (2)
-    // template <auto ... vs > struct HeterogenousValueList {};
-    // using MyList1 = HeterogenousValueList<42, 'X', 13u>;
+template <typename Type, Type value> constexpr Type constant = value;
+constexpr auto const IntConstant66 = constant<int, 66>;
 
-    // (3)
-    // template <auto v0, decltype(v0) ... vs> struct HomogenousValueList {};
-    // using MyList2 = HomogenousValueList<1, 2, 3>;
+/// Not compiling yet
+// (1)
+// template <auto value> constexpr auto constant2 = value;
+// constexpr auto const IntConstant66_2 = constant2<66>;
+
+// (2)
+// template <auto ... vs > struct HeterogenousValueList {};
+// using MyList1 = HeterogenousValueList<42, 'X', 13u>;
+
+// (3)
+// template <auto v0, decltype(v0) ... vs> struct HomogenousValueList {};
+// using MyList2 = HomogenousValueList<1, 2, 3>;
 
 }
 
 class templatesInst : Base {
+
     private:
         string m_generic_name;
         string m_generic_name2;
+
     protected:
         Extensions::Printer<string> m_printer;
-    public:
 
-        templatesInst() : m_generic_name2("genericInstance"), m_generic_name("templatesInst") {
+    public:
+        // Initialization in inverse order is a not defined behaviour
+        templatesInst() : m_generic_name2("genericInstance"),
+                          m_generic_name("templatesInst") {
             m_printer.print("templatesInst constructor");
             cout << Extensions::IntConstant66  << endl;
+            cout << Extensions::StrConstant66  << endl;
+            // Initialize the protected member of the Base class
             m_name = "templatesInst 1";
         }
 
@@ -54,6 +61,3 @@ class templatesInst : Base {
             return *this;
         }
 };
-
-
-#endif //CPP_LIBRARIES_GENERICINSTANCE_H

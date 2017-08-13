@@ -14,24 +14,10 @@ function run() {
     bin/cpp_libraries
 }
 
-#
-# Docker / gitlab
-######
-#function docker_build() {
-#   sudo -s docker build -t registry.gitlab.com/martibayoalemany/algorithms:latest $ROOT_PATH   
-#}
-
-#function docker_push() {
-#   sudo -s docker build -t registry.gitlab.com/martibayoalemany/algorithms:latest $ROOT_PATH   
-#}
-
-#function docker_run_bash() {
-#   sudo -s docker run -v $ROOT_PATH/stats:/git/stats -it registry.gitlab.com/martibayoalemany/algorithms:latest bash 
-#}
-
-#function docker_run_java_sorting() {
-#   sudo -s docker run -v $ROOT_PATH/stats:/git/stats -it registry.gitlab.com/martibayoalemany/algorithms:latest bash -c "source /git/scripts/activate && java_sorting_check"
-#}
+function run_gcc_7() {
+  cmake -DCMAKE_USER_MAKE_RULES_OVERRIDE=gcc_7_compiler.txt
+  run
+}
 
 #
 # Travis does not has coreutils/realpath
@@ -64,58 +50,56 @@ function set_env() {
     fi
 }
 
-##
-# Monitor queues
-###
-
-function system_monitor_queues() {
-   [ ! -e /mnt/mqueue ] && mkdir -p /mnt/mqueue || "/mnt/mqueue already exists"
-   #        type   device path
-   mount -t mqueue none   /mnt/mqueue
-   while inotifywait /mnt/mqueue; do
-	if  which kdialog >/dev/null; then
-	    ipcs | kdialog --textbox -
-	fi
-	if which zenity >/dev/null; then
-	    zenity --notification --listen /dev/stdin <<< "message:mqueues monitoring needs kdialog"
-	fi 
-   done &
-}
-
-##
-#  Block port
-####
-function ufw_block_out_http() {
-    #ufw_num_rules
-    #sudo -s ufw reset
-    sudo -s ss -p | grep -P "http\s" | perl -ane 'print $F[4],qq(\n)' | perl -ane 'print $F[1],qq( )' -F':'  | uniq | xargs -n 1 ufw deny out 
-    #ufw_num_rules
-}
-
-function ufw_block_out_http_of() {
-   #set interface={1:'network interface needed'}
-   echo "sudo -s ss -p | grep -P 'http\s' | perl -ane 'print $F[4],qq(\n)' | perl -ane 'print $F[1],qq( )' -F':'  | uniq | xargs -n 1 ufw deny out from $interface"
-}
-
-function ls_http_socks() {
-     sudo -s ss -p | grep -P 'http\s' | tr -s ' ' 
-}
-
-function ls_https_socks() {
-     sudo -s ss -p | grep -P 'https\s' | tr -s ' ' 
-}
-
-function ufw_block_in_out_http() {
-     sudo -s ss -p | grep -P 'http\s' | tr -s ' ' | cut -d' ' -f5 | cut -d':' -f2 | uniq | xargs -n1 ufw deny in
-     sudo -s ss -p | grep -P 'http\s' | tr -s ' ' | cut -d' ' -f5 | cut -d':' -f2 | uniq | xargs -n1 ufw deny out
-}
-
-function ufw_num_rules() {
-    sudo -s ufw status numbered | cut -d' ' -f1 | tail -2 | perl -ane '$F[0]=~s/\[(\d+)\]/$1/;print $F[0]'
-}
-
-##
 #  Dependencies (pip, grape, mvn)
+####
+
+function requirements_init_grape() {    
+    cat $ROOT_PATH/requirements_java.txt  | awk -F':' '{print $1 " " $2}' | xargs -n2 grape install
+}
+
+function requirements_init_maven() {        
+    if ! which mvn > /dev/null; then
+        sudo apt install maven -y
+    fi
+    [ ! -e $REQUIREMENTS_JAVA_PATH ] && mkdir  $REQUIREMENTS_JAVA_PATH || echo  Script: $SCRIPT_PATH Root: $ROOT_PATH Requirements: $REQUIREMENTS_JAVA_PATH      
+    echo cat $REQUIREMENTS_JAVA_FILE | egrep -v "^#" | xargs -I{} mvn dependency:copy -DoutputDirectory=$REQUIREMENTS_JAVA_PATH -Dartifact={}:jar:sources
+}
+
+##
+#  Git commands
+####
+
+function git_revert() {    
+    # Tries to revert a file using the latest revision in git
+    
+    echo $0 " " $1
+    git checkout $(git rev-list -n 1 HEAD -- $1) -- $1
+}
+
+
+function git_log() {
+   git log --graph --pretty=format:'%C(Red) %h %C(Yellow) %s'
+}
+
+function git_ignore_untracked() {
+    for an_arg in "$@" ; do
+      echo "${an_arg}"
+     done
+    git status  | sed '1,/Untracked/d' | grep -v '(use' | sed -e 's/\W\(.*\)/\1/g' | tee -a .gitignore
+}
+
+##
+#  File commands
+####
+function ls_recursive_no_ext() {
+    pushd .
+    cd $ROOT_PATH
+    find `pwd` src -type f ! -name '*.*' | grep -v ".git"
+    popd
+}
+
+##
+#  Python commands
 ####
 function py_init() {
 
@@ -152,58 +136,8 @@ function py_init() {
         pip install --upgrade pip
         pip install -r requirements.txt
     fi
-
-    #ctags -af .tags_py -R ~/.venv3/lib/python3.5/site-packages    
 }
 
-function grape_init() {    
-    cat $ROOT_PATH/requirements_java.txt  | awk -F':' '{print $1 " " $2}' | xargs -n2 grape install
-}
-
-function mvn_copy_dependencies() {        
-    if ! which mvn > /dev/null; then
-        sudo apt install maven -y
-    fi
-    [ ! -e $target ] && mkdir  $REQUIREMENTS_JAVA_PATH || echo  Script: $SCRIPT_PATH Root: $ROOT_PATH Dependencies: $REQUIREMENTS_JAVA_PATH      
-    echo cat $REQUIREMENTS_JAVA_PATH | egrep -v "^#" | xargs -I{} mvn dependency:copy -DoutputDirectory=$REQUIREMENTS_JAVA_PATH -Dartifact={}:jar:sources
-}
-
-##
-#  Git commands
-####
-
-function git_revert() {    
-    # Tries to revert a file using the latest revision in git
-    
-    echo $0 " " $1
-    git checkout $(git rev-list -n 1 HEAD -- $1) -- $1
-}
-
-
-function git_log() {
-   git log --graph --pretty=format:'%C(Red) %h %C(Yellow) %s'
-}
-
-function git_ignore_untracked() {
-    for an_arg in "$@" ; do
-      echo "${an_arg}"
-     done
-    git status  | sed '1,/Untracked/d' | grep -v '(use' | sed -e 's/\W\(.*\)/\1/g' | tee -a .gitignore
-}
-
-##
-#  File commands
-####
-function files_no_ext() {
-    pushd .
-    cd $ROOT_PATH
-    find `pwd` src -type f ! -name '*.*' | grep -v ".git"
-    popd
-}
-
-##
-#  Pip commands
-####
 function pip_ins_free() {
     [ $(python --version | cut -d' ' -f2 | sed -e 's/.*\(3\.5\).*/\1/g')='3.5' ] && requirements='requirements_3_5.txt' || requirements='requirements.txt'
     echo $1
@@ -213,21 +147,12 @@ function pip_ins_free() {
     echo $requirements
 }
 
-function pip_cache_wheels() {
-   mkdir wheels-cache
-   cat requirements.txt | xargs -n1 pip wheel --wheel-dir=wheels-cache
-}
-
-function pip_install_from_wheels() {
-    cat requirements.txt | xargs -n1 pip install --use-wheel --no-index --find-links=./wheels-cache
-}
-
 ##
-# Funcs
+# Functs
 ####
-function functs_ls() {
+function ls_functs() {
     declare -F | cut -d' ' -f3 | egrep --invert-match '^(?_)' 
 }
 
-declare -F | cut -d' ' -f3 | egrep --invert-match '^(?_)'
+ls_functs
 set_env

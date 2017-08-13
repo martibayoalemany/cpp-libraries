@@ -8,10 +8,6 @@
 
 [requires]
     Boost/1.Y.Z
-    OpenCV/3.Y.Z
-    Qt/5.Y.Z
-    gmock/1.Y.Z
-    googletest/1.Y.Z
 
 [options]
 
@@ -26,11 +22,7 @@
 
 [full_requires]
     Boost/1.64.0@inexorgame/stable:ef95892a18529dd911867b4a44198c7e19849731
-    OpenCV/3.2.0@ohhi/stable:4cc931e24e37948d83aaaf638aeca02991ff6d08
-    Qt/5.7.1@osechet/stable:256d905d3d4e6f2ada377c464ed78a14d96c6793
     bzip2/1.0.6@lasote/stable:880e5642afc26dae7f4019501d6632b3a6dba009
-    gmock/1.8.0@meshell/stable:4cc931e24e37948d83aaaf638aeca02991ff6d08
-    googletest/1.8.0@astrohawk/stable:9adcff233a86f52b6879aa1058c2023523649d34
     zlib/1.2.11@lasote/stable:3fc896c7ead7e99000454751b38b866b14fe6459
 
 [full_options]
@@ -65,33 +57,8 @@
     Boost:without_timer=False
     Boost:without_type_erasure=False
     Boost:without_wave=False
-    OpenCV:shared=False
-    Qt:canvas3d=False
-    Qt:gamepad=False
-    Qt:graphicaleffects=False
-    Qt:imageformats=False
-    Qt:location=False
-    Qt:opengl=desktop
-    Qt:serialport=False
-    Qt:shared=True
-    Qt:svg=False
-    Qt:tools=False
-    Qt:webengine=False
-    Qt:websockets=False
-    Qt:xmlpatterns=False
     bzip2:fPIC=True
     bzip2:shared=False
-    gmock:cygwin_msvc=False
-    gmock:disable_pthreads=False
-    gmock:shared=False
-    googletest:BUILD_SHARED_LIBS=OFF
-    googletest:GTEST_HAS_PTHREAD=None
-    googletest:GTEST_HAS_TR1_TUPLE=None
-    googletest:GTEST_USE_OWN_TR1_TUPLE=None
-    googletest:gtest_build_samples=OFF
-    googletest:gtest_build_tests=OFF
-    googletest:gtest_disable_pthreads=OFF
-    googletest:gtest_force_shared_crt=ON
     zlib:shared=True
 
 [scope]

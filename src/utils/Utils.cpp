@@ -2,8 +2,10 @@
 #include <sys/param.h>
 #include <unistd.h>
 #include <regex>
+#include <boost/filesystem.hpp>
 
 using namespace std;
+using fs = boost::filesystem;
 
 string Utils::getCurrentDir() {
     int len = 10000;
@@ -17,7 +19,9 @@ string Utils::getCurrentDir() {
 }
 
 const string Utils::getDataFile() {
-    return getDataFile(getCurrentDir());
+    string curDir = getCurrentDir();
+    cout << curDir << " - > " << fs::file_size(curDir.c_str()) << endl;
+    return getDataFile(curDir);
 }
 
 const string Utils::getDataFile(string binary_path) {

@@ -21,108 +21,6 @@ set(CONAN_SHARED_LINKER_FLAGS_BOOST_LIST "")
 set(CONAN_EXE_LINKER_FLAGS_BOOST_LIST "")
 
 
-set(CONAN_OPENCV_ROOT "/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08")
-set(CONAN_INCLUDE_DIRS_OPENCV "/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include")
-set(CONAN_LIB_DIRS_OPENCV "/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib")
-set(CONAN_BIN_DIRS_OPENCV "/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin")
-set(CONAN_RES_DIRS_OPENCV "/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res")
-set(CONAN_BUILD_DIRS_OPENCV "/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/")
-set(CONAN_LIBS_OPENCV opencv_calib3d opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect opencv_photo opencv_shape opencv_stitching opencv_superres opencv_video opencv_videoio opencv_videostab opencv_core zlib libjpeg libpng libjasper libtiff libwebp IlmImf ippicv pthread dl)
-set(CONAN_DEFINES_OPENCV )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_OPENCV )
-
-set(CONAN_C_FLAGS_OPENCV "")
-set(CONAN_CXX_FLAGS_OPENCV "")
-set(CONAN_SHARED_LINKER_FLAGS_OPENCV "")
-set(CONAN_EXE_LINKER_FLAGS_OPENCV "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_OPENCV_LIST "")
-set(CONAN_CXX_FLAGS_OPENCV_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_OPENCV_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_OPENCV_LIST "")
-
-
-set(CONAN_QT_ROOT "/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793")
-set(CONAN_INCLUDE_DIRS_QT "/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtCore"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtDBus"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtGui"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtNetwork"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtOpenGL"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtSql"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtTest"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtWidgets"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtXml")
-set(CONAN_LIB_DIRS_QT "/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/lib")
-set(CONAN_BIN_DIRS_QT "/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/bin")
-set(CONAN_RES_DIRS_QT "/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/res")
-set(CONAN_BUILD_DIRS_QT "/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/")
-set(CONAN_LIBS_QT Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Sql Qt5Test Qt5Widgets Qt5Xml)
-set(CONAN_DEFINES_QT )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_QT )
-
-set(CONAN_C_FLAGS_QT "")
-set(CONAN_CXX_FLAGS_QT "")
-set(CONAN_SHARED_LINKER_FLAGS_QT "")
-set(CONAN_EXE_LINKER_FLAGS_QT "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_QT_LIST "")
-set(CONAN_CXX_FLAGS_QT_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_QT_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_QT_LIST "")
-
-
-set(CONAN_GMOCK_ROOT "/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08")
-set(CONAN_INCLUDE_DIRS_GMOCK "/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include")
-set(CONAN_LIB_DIRS_GMOCK "/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib")
-set(CONAN_BIN_DIRS_GMOCK "/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin")
-set(CONAN_RES_DIRS_GMOCK "/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res")
-set(CONAN_BUILD_DIRS_GMOCK "/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/")
-set(CONAN_LIBS_GMOCK gtest gtest_main gmock gmock_main pthread)
-set(CONAN_DEFINES_GMOCK )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_GMOCK )
-
-set(CONAN_C_FLAGS_GMOCK "")
-set(CONAN_CXX_FLAGS_GMOCK "")
-set(CONAN_SHARED_LINKER_FLAGS_GMOCK "")
-set(CONAN_EXE_LINKER_FLAGS_GMOCK "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_GMOCK_LIST "")
-set(CONAN_CXX_FLAGS_GMOCK_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_GMOCK_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_GMOCK_LIST "")
-
-
-set(CONAN_GOOGLETEST_ROOT "/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34")
-set(CONAN_INCLUDE_DIRS_GOOGLETEST "/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include")
-set(CONAN_LIB_DIRS_GOOGLETEST "/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/lib")
-set(CONAN_BIN_DIRS_GOOGLETEST "/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/bin")
-set(CONAN_RES_DIRS_GOOGLETEST "/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/res")
-set(CONAN_BUILD_DIRS_GOOGLETEST "/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/")
-set(CONAN_LIBS_GOOGLETEST gtest gtest_main pthread)
-set(CONAN_DEFINES_GOOGLETEST )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_GOOGLETEST )
-
-set(CONAN_C_FLAGS_GOOGLETEST "")
-set(CONAN_CXX_FLAGS_GOOGLETEST "")
-set(CONAN_SHARED_LINKER_FLAGS_GOOGLETEST "")
-set(CONAN_EXE_LINKER_FLAGS_GOOGLETEST "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_GOOGLETEST_LIST "")
-set(CONAN_CXX_FLAGS_GOOGLETEST_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_GOOGLETEST_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_GOOGLETEST_LIST "")
-
-
 set(CONAN_BZIP2_ROOT "/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009")
 set(CONAN_INCLUDE_DIRS_BZIP2 "/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include")
 set(CONAN_LIB_DIRS_BZIP2 "/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/lib")
@@ -175,7 +73,7 @@ set(CONAN_EXE_LINKER_FLAGS_ZLIB_LIST "")
 set(CONAN_PACKAGE_NAME None)
 set(CONAN_PACKAGE_VERSION None)
 
-set(CONAN_DEPENDENCIES Boost OpenCV Qt gmock googletest bzip2 zlib)
+set(CONAN_DEPENDENCIES Boost bzip2 zlib)
 # Storing original command line args (CMake helper) flags
 set(CONAN_CMD_CXX_FLAGS ${CONAN_CXX_FLAGS})
 
@@ -184,50 +82,20 @@ set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
 set(CONAN_INCLUDE_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"
-			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtCore"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtDBus"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtGui"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtNetwork"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtOpenGL"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtSql"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtTest"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtWidgets"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtXml"
-			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"
-			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/include"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include" ${CONAN_INCLUDE_DIRS})
 set(CONAN_LIB_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/lib"
-			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/lib"
-			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/lib"
-			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/lib"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/lib"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/lib" ${CONAN_LIB_DIRS})
 set(CONAN_BIN_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/bin"
-			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/bin"
-			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/bin"
-			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/bin"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/bin"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/bin" ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/res"
-			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/res"
-			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/res"
-			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/res"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/res"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/res" ${CONAN_RES_DIRS})
-set(CONAN_LIBS boost_wave boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system opencv_calib3d opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect opencv_photo opencv_shape opencv_stitching opencv_superres opencv_video opencv_videoio opencv_videostab opencv_core zlib libjpeg libpng libjasper libtiff libwebp IlmImf ippicv dl Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Sql Qt5Test Qt5Widgets Qt5Xml gmock gmock_main gtest gtest_main pthread bz2 z ${CONAN_LIBS})
+set(CONAN_LIBS boost_wave boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_container boost_exception boost_graph boost_iostreams boost_locale boost_log boost_log_setup boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_program_options boost_random boost_regex boost_wserialization boost_serialization boost_signals boost_coroutine boost_context boost_timer boost_thread boost_chrono boost_date_time boost_atomic boost_filesystem boost_system bz2 z ${CONAN_LIBS})
 set(CONAN_DEFINES -DBOOST_ALL_DYN_LINK ${CONAN_DEFINES})
 set(CONAN_CMAKE_MODULE_PATH "/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/"
-			"/home/username/.conan/data/OpenCV/3.2.0/ohhi/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/"
-			"/home/username/.conan/data/Qt/5.7.1/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/"
-			"/home/username/.conan/data/gmock/1.8.0/meshell/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/"
-			"/home/username/.conan/data/googletest/1.8.0/astrohawk/stable/package/9adcff233a86f52b6879aa1058c2023523649d34/"
 			"/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/"
 			"/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/" ${CONAN_CMAKE_MODULE_PATH})
 
@@ -279,138 +147,6 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_BOOST_RELEASE_LIST} ${CONAN_CXX_FLAGS_BOOST_RELEASE_LIST}>
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_BOOST_RELEASE_LIST} ${CONAN_CXX_FLAGS_BOOST_RELEASE_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_BOOST_DEBUG_LIST}  ${CONAN_CXX_FLAGS_BOOST_DEBUG_LIST}>)
- 
-
-    conan_find_libraries_abs_path("${CONAN_LIBS_OPENCV}" "${CONAN_LIB_DIRS_OPENCV}"
-                                  CONAN_FULLPATH_LIBS_OPENCV)
-    conan_find_libraries_abs_path("${CONAN_LIBS_OPENCV_DEBUG}" "${CONAN_LIB_DIRS_OPENCV_DEBUG}"
-                                  CONAN_FULLPATH_LIBS_OPENCV_DEBUG)
-    conan_find_libraries_abs_path("${CONAN_LIBS_OPENCV_RELEASE}" "${CONAN_LIB_DIRS_OPENCV_RELEASE}"
-                                  CONAN_FULLPATH_LIBS_OPENCV_RELEASE)
-
-    add_library(CONAN_PKG::OpenCV INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::OpenCV PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_OPENCV} ${CONAN_SHARED_LINKER_FLAGS_OPENCV_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENCV_LIST}
-                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_OPENCV_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_OPENCV_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENCV_RELEASE_LIST}>
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_OPENCV_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_OPENCV_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENCV_RELEASE_LIST}>
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_OPENCV_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_OPENCV_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENCV_RELEASE_LIST}>
-                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_OPENCV_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_OPENCV_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENCV_DEBUG_LIST}>
-                                                                 )
-    set_property(TARGET CONAN_PKG::OpenCV PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_OPENCV}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_OPENCV_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_OPENCV_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_OPENCV_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_OPENCV_DEBUG}>)
-    set_property(TARGET CONAN_PKG::OpenCV PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_OPENCV}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_OPENCV_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_OPENCV_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_OPENCV_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_OPENCV_DEBUG}>)
-    set_property(TARGET CONAN_PKG::OpenCV PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_OPENCV_LIST} ${CONAN_CXX_FLAGS_OPENCV_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_OPENCV_RELEASE_LIST} ${CONAN_CXX_FLAGS_OPENCV_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_OPENCV_RELEASE_LIST} ${CONAN_CXX_FLAGS_OPENCV_RELEASE_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_OPENCV_RELEASE_LIST} ${CONAN_CXX_FLAGS_OPENCV_RELEASE_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_OPENCV_DEBUG_LIST}  ${CONAN_CXX_FLAGS_OPENCV_DEBUG_LIST}>)
- 
-
-    conan_find_libraries_abs_path("${CONAN_LIBS_QT}" "${CONAN_LIB_DIRS_QT}"
-                                  CONAN_FULLPATH_LIBS_QT)
-    conan_find_libraries_abs_path("${CONAN_LIBS_QT_DEBUG}" "${CONAN_LIB_DIRS_QT_DEBUG}"
-                                  CONAN_FULLPATH_LIBS_QT_DEBUG)
-    conan_find_libraries_abs_path("${CONAN_LIBS_QT_RELEASE}" "${CONAN_LIB_DIRS_QT_RELEASE}"
-                                  CONAN_FULLPATH_LIBS_QT_RELEASE)
-
-    add_library(CONAN_PKG::Qt INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::Qt PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_QT} ${CONAN_SHARED_LINKER_FLAGS_QT_LIST} ${CONAN_EXE_LINKER_FLAGS_QT_LIST}
-                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_QT_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_QT_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_QT_RELEASE_LIST}>
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_QT_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_QT_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_QT_RELEASE_LIST}>
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_QT_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_QT_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_QT_RELEASE_LIST}>
-                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_QT_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_QT_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_QT_DEBUG_LIST}>
-                                                                 )
-    set_property(TARGET CONAN_PKG::Qt PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_QT}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_QT_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_QT_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_QT_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_QT_DEBUG}>)
-    set_property(TARGET CONAN_PKG::Qt PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_QT}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_QT_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_QT_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_QT_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_QT_DEBUG}>)
-    set_property(TARGET CONAN_PKG::Qt PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_QT_LIST} ${CONAN_CXX_FLAGS_QT_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_QT_RELEASE_LIST} ${CONAN_CXX_FLAGS_QT_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_QT_RELEASE_LIST} ${CONAN_CXX_FLAGS_QT_RELEASE_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_QT_RELEASE_LIST} ${CONAN_CXX_FLAGS_QT_RELEASE_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_QT_DEBUG_LIST}  ${CONAN_CXX_FLAGS_QT_DEBUG_LIST}>)
- 
-
-    conan_find_libraries_abs_path("${CONAN_LIBS_GMOCK}" "${CONAN_LIB_DIRS_GMOCK}"
-                                  CONAN_FULLPATH_LIBS_GMOCK)
-    conan_find_libraries_abs_path("${CONAN_LIBS_GMOCK_DEBUG}" "${CONAN_LIB_DIRS_GMOCK_DEBUG}"
-                                  CONAN_FULLPATH_LIBS_GMOCK_DEBUG)
-    conan_find_libraries_abs_path("${CONAN_LIBS_GMOCK_RELEASE}" "${CONAN_LIB_DIRS_GMOCK_RELEASE}"
-                                  CONAN_FULLPATH_LIBS_GMOCK_RELEASE)
-
-    add_library(CONAN_PKG::gmock INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::gmock PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_GMOCK} ${CONAN_SHARED_LINKER_FLAGS_GMOCK_LIST} ${CONAN_EXE_LINKER_FLAGS_GMOCK_LIST}
-                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_GMOCK_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_GMOCK_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_GMOCK_RELEASE_LIST}>
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_GMOCK_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_GMOCK_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_GMOCK_RELEASE_LIST}>
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_GMOCK_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_GMOCK_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_GMOCK_RELEASE_LIST}>
-                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_GMOCK_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_GMOCK_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_GMOCK_DEBUG_LIST}>
-                                                                 )
-    set_property(TARGET CONAN_PKG::gmock PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_GMOCK}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_GMOCK_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_GMOCK_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_GMOCK_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_GMOCK_DEBUG}>)
-    set_property(TARGET CONAN_PKG::gmock PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_GMOCK}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_GMOCK_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_GMOCK_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_GMOCK_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_GMOCK_DEBUG}>)
-    set_property(TARGET CONAN_PKG::gmock PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_GMOCK_LIST} ${CONAN_CXX_FLAGS_GMOCK_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_GMOCK_RELEASE_LIST} ${CONAN_CXX_FLAGS_GMOCK_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_GMOCK_RELEASE_LIST} ${CONAN_CXX_FLAGS_GMOCK_RELEASE_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_GMOCK_RELEASE_LIST} ${CONAN_CXX_FLAGS_GMOCK_RELEASE_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_GMOCK_DEBUG_LIST}  ${CONAN_CXX_FLAGS_GMOCK_DEBUG_LIST}>)
- 
-
-    conan_find_libraries_abs_path("${CONAN_LIBS_GOOGLETEST}" "${CONAN_LIB_DIRS_GOOGLETEST}"
-                                  CONAN_FULLPATH_LIBS_GOOGLETEST)
-    conan_find_libraries_abs_path("${CONAN_LIBS_GOOGLETEST_DEBUG}" "${CONAN_LIB_DIRS_GOOGLETEST_DEBUG}"
-                                  CONAN_FULLPATH_LIBS_GOOGLETEST_DEBUG)
-    conan_find_libraries_abs_path("${CONAN_LIBS_GOOGLETEST_RELEASE}" "${CONAN_LIB_DIRS_GOOGLETEST_RELEASE}"
-                                  CONAN_FULLPATH_LIBS_GOOGLETEST_RELEASE)
-
-    add_library(CONAN_PKG::googletest INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::googletest PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_GOOGLETEST} ${CONAN_SHARED_LINKER_FLAGS_GOOGLETEST_LIST} ${CONAN_EXE_LINKER_FLAGS_GOOGLETEST_LIST}
-                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_GOOGLETEST_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_GOOGLETEST_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_GOOGLETEST_RELEASE_LIST}>
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_GOOGLETEST_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_GOOGLETEST_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_GOOGLETEST_RELEASE_LIST}>
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_GOOGLETEST_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_GOOGLETEST_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_GOOGLETEST_RELEASE_LIST}>
-                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_GOOGLETEST_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_GOOGLETEST_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_GOOGLETEST_DEBUG_LIST}>
-                                                                 )
-    set_property(TARGET CONAN_PKG::googletest PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_GOOGLETEST}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_GOOGLETEST_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_GOOGLETEST_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_GOOGLETEST_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_GOOGLETEST_DEBUG}>)
-    set_property(TARGET CONAN_PKG::googletest PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_GOOGLETEST}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_GOOGLETEST_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_GOOGLETEST_RELEASE}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_GOOGLETEST_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_GOOGLETEST_DEBUG}>)
-    set_property(TARGET CONAN_PKG::googletest PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_GOOGLETEST_LIST} ${CONAN_CXX_FLAGS_GOOGLETEST_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_GOOGLETEST_RELEASE_LIST} ${CONAN_CXX_FLAGS_GOOGLETEST_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_GOOGLETEST_RELEASE_LIST} ${CONAN_CXX_FLAGS_GOOGLETEST_RELEASE_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_GOOGLETEST_RELEASE_LIST} ${CONAN_CXX_FLAGS_GOOGLETEST_RELEASE_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_GOOGLETEST_DEBUG_LIST}  ${CONAN_CXX_FLAGS_GOOGLETEST_DEBUG_LIST}>)
  
 
     conan_find_libraries_abs_path("${CONAN_LIBS_BZIP2}" "${CONAN_LIB_DIRS_BZIP2}"
@@ -478,7 +214,7 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_CXX_FLAGS_ZLIB_RELEASE_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_ZLIB_DEBUG_LIST}  ${CONAN_CXX_FLAGS_ZLIB_DEBUG_LIST}>)
  
-    set(CONAN_TARGETS CONAN_PKG::Boost CONAN_PKG::OpenCV CONAN_PKG::Qt CONAN_PKG::gmock CONAN_PKG::googletest CONAN_PKG::bzip2 CONAN_PKG::zlib)
+    set(CONAN_TARGETS CONAN_PKG::Boost CONAN_PKG::bzip2 CONAN_PKG::zlib)
 
 endmacro()
 
