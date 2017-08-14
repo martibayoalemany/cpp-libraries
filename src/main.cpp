@@ -11,6 +11,7 @@
 #include "basics/templatesInst.h"
 #include "hpp/custom_exception.hpp"
 #include "utils/DataFile.h"
+#include "utils/FileUtils.h"
 
 using namespace std;
 using namespace chrono;
@@ -36,11 +37,13 @@ void signal_action_handler(int sig, siginfo_t* info, void*) {
     longjmp(long_jump_reference, 1);
 }
 
-void time_it(string desc, std::function<void()> funct) {
+int time_it(string desc, std::function<void()> funct) {
     cl_point start = cl::now();
     funct();
     cl_point end = cl::now();
-    cout << desc << " " << duration_cast<milliseconds>(end - start).count()  << " ms " << endl;
+    int ms = duration_cast<milliseconds>(end - start).count();
+    cout << desc << " " << ms  << " ms " << endl;
+    return ms;
 }
 
 template <class T>
@@ -131,13 +134,13 @@ void doAbort() {
 
 void doApiChecks() {
 
-    // Checking ...
+    // Checking templated elipsis ...
     auto vs = increment(1,2,3,4, 102);
     cout << get<0>(vs) << '\t' << get<1>(vs);
     cout << endl;
     cout << vs << endl;
 
-    // Checking shared_ptr
+    /// Checking shared_ptr.use_count()
     //doAbort();
     shared_ptr<DataFile<int>> shareSD = make_shared<DataFile<int>>();
     shared_ptr<DataFile<int>> shareSD2 = shareSD->getptr();
@@ -152,11 +155,12 @@ void doApiChecks() {
     }
     cout << shareSD3.use_count() << endl;
 
-    // Opening a file to read ints
+    /// Read ints and timeit
     using DF = DataFile<int>;
-    unique_ptr<DF> dataSource = time_it_supplier<unique_ptr<DF>>("DataFile constructor : ", []() { return make_unique<DF>();});
+    unique_ptr<DF> dataSource = time_it_supplier<unique_ptr<DF>>("DataFile constructor : ",
+                                                                 []() { return make_unique<DF>();});
 
-    const string  dataFile = dataSource.get()->getDataFile();
+    const string  dataFile = dataSource->getDataFile();
     cout << "---- " << dataFile << " " << &dataFile << " ";
     cout << sizeof(dataFile.c_str()[0]) << endl;
 
@@ -187,7 +191,9 @@ void doApiChecks() {
         cout << "Double check okey " << endl;
     }
 
-    /// Basic sort all elements
+    /***
+     Sort all elements
+     */
     stringstream desc2;
     desc2 << "Sort " << elements << " elements:";
 
@@ -195,9 +201,9 @@ void doApiChecks() {
             [&] () {sort(dataCopy.begin(), dataCopy.end(), greater<int>());});
     for_each_n_print(dataCopy, 20);
 
-    /// Copy and  sort all elements in different step size
-    std::ofstream ofs;
-    ofs.open ("test.txt", std::ofstream::out | std::ofstream::app);
+    /// open a file for statistics
+    unique_ptr<FileUtils> fu = make_unique<FileUtils>();
+    bool has_stats = fu->openStats();
 
     int step = 10000;
     for(int el_it = step; el_it < elements; el_it += step ) {
@@ -214,9 +220,12 @@ void doApiChecks() {
 
         desc_iteration.clear();
         desc_iteration.str(string());
-        desc_iteration << "Sort " <<  el_it << " elements:";
-        time_it(desc_iteration.str(),
+        desc_iteration << "!!! Sort !!!" <<  el_it << " elements:";
+        int sorted_in_ms = time_it(desc_iteration.str(),
                 [&]() { sort(localCopy.begin(), localCopy.end(), greater<int>()); });
+
+        if(has_stats)
+          fu->writeStats(string("sort"), el_it, sorted_in_ms);
         cout << "Local copy has " << localCopy.size() << " elements" << endl;
         for_each_n_print(localCopy, 20);
     }

@@ -21,7 +21,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(CMAKE_CXX_FLAGS " -g -O0 -Wall -std=c++14")
     MESSAGE("Using clang")
 else()
-    set(GCC_COVERAGE_COMPILE_FLAGS " -g -O0 -Wall -lpthread -std=c++1z -ggdb -fconcept -v  -D_GLIBCXX_USE_CXX11_ABI=0 -fpermissive")
+    set(GCC_COVERAGE_COMPILE_FLAGS " -g -O0 -Wall -lpthread -std=c++1z -lboost_system -ggdb -fconcept -v  -D_GLIBCXX_USE_CXX11_ABI=0 -fpermissive")
     MESSAGE("Not Using clang")
 endif()
 

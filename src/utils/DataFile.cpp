@@ -75,7 +75,7 @@ const string DataFile<T>::getDataFile(string binary_path) {
     }
 
     stringstream ss;
-    ss << pieces_match[1] <<  "/data/random_numbers.txt";
+    ss << pieces_match[1] <<  "/data/" << string(DATA_FILENAME);
     return ss.str();
 }
 

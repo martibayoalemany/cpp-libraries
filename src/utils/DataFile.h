@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 /**
  * It reads the file at "ROOT_DIR/data/random_numbers.txt"
  * as a vector of T
@@ -14,7 +15,8 @@ using namespace std;
 template <class T>
 class DataFile : public enable_shared_from_this<DataFile<T>> {
 
-private:
+    const char* DATA_FILENAME = "random_numbers_from_shuf.txt";
+
     vector<T> data;
     string getCurrentDir();
     const string getDataFile(basic_string<char> binary_path);
