@@ -6,6 +6,11 @@ Makefile
 cmake_install.cmake
 3rdParty
 3rdParty/*
-data/random_numbers.txt
+data/*.txt
 build/conanbuildinfo.cmake
 build/conaninfo.txt
+.idea/fileTemplates/
+CMakeFiles/
+bin/
+ci_gitlab_gcc/__pycache__/
+stats/

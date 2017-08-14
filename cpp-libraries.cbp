@@ -131,10 +131,22 @@
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/main.cpp">
 			<Option target="std_lib"/>
 		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/Utils.cpp">
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/DataFile.cpp">
 			<Option target="std_lib"/>
 		</Unit>
-		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/Utils.h">
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/DataFile.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/FileUtils.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/FileUtils.h">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/_DataFile.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/utils/_DataFile.h">
 			<Option target="std_lib"/>
 		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/CMakeLists.txt">
