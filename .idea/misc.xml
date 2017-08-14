@@ -11,6 +11,7 @@
       <file path="$PROJECT_DIR$/build" />
       <file path="$PROJECT_DIR$/ci_gitlab_gcc" />
       <file path="$PROJECT_DIR$/scripts" />
+      <file path="$PROJECT_DIR$/stats" />
     </excludeRoots>
   </component>
 </project>

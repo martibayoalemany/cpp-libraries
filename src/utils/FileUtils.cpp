@@ -57,17 +57,19 @@ const string FileUtils::getStatsFile(string binary_path) {
     for(int i=0; i < 2; i++)
         ss_regex << "(.*)\\/";
     ss_regex << "(.*)";
-    cout << ss_regex.str() << endl;
+
     std::regex pieces_regex(ss_regex.str(), std::regex_constants::icase);
     cmatch pieces_match;
     if (regex_match(binary_path.c_str(), pieces_match, pieces_regex)) {
         for (size_t i = 0; i < pieces_match.size(); ++i) {
             csub_match sub_match = pieces_match[i];
             string piece = sub_match.str();
-            cout << "  submatch: " << i << ": " << piece << '\n';
+            if(VERBOSE)
+                cout << "  submatch: " << i << ": " << piece << '\n';
         }
     } else {
-        cout << " No match " << endl;
+        if(VERBOSE)
+            cout << " No match " << endl;
     }
 
     //auto p = boost::date_time::second_clock::local_time();
@@ -95,20 +97,28 @@ const string FileUtils::getStatsFile(string binary_path) {
 
 bool FileUtils::openStats() {
     string stats = getStatsFile();
-    // creates the file
-    _ofstream = new ofstream();
+    ofstream* _ofstream = new ofstream();
     _ofstream->open(stats, std::ofstream::out | std::ofstream::app);
+    if(!_ofstream->is_open()) {
+        cout << "File not opened" << endl;
+        return false;
+    }
     stringstream headerStream;
-    headerStream << "name\t | shuffle\t | elements \t| duration_ms\t | p_duration_s\t | p_duration_ns\t | memory\t";
-    headerStream << "-----\t | -----\t | ----- \t| -----\t | -----\t | -----\t | -----\t";
+    headerStream << "name\t | shuffle\t | elements \t| duration_ms\t | p_duration_s\t | p_duration_ns\t | memory\t" << endl;
+    headerStream << "-----\t | -----\t | ----- \t| -----\t | -----\t | -----\t | -----\t" << endl;
     *_ofstream << headerStream.str();
-
-    return _ofstream->is_open();
+    _ofstream->close();
+    return true;
 }
 
 bool FileUtils::writeStats(string name, int elements, int ms) {
-    ofstream* ofs = _ofstream;
-    if(ofs->is_open()) return false;
+    string stats = getStatsFile();
+    ofstream* ofs = new ofstream();
+    ofs->open(stats, std::ofstream::out | std::ofstream::app);
+    if(!ofs->is_open()) {
+        cout << "File not opened" << endl;
+        return false;
+    }
     *ofs  << name << "\t|";
     *ofs  << "" << "\t|";
     *ofs  << elements << "\t|";
@@ -116,6 +126,6 @@ bool FileUtils::writeStats(string name, int elements, int ms) {
     *ofs  << "" << "\t|";  // s
     *ofs  << "" << "\t|";  // ns
     *ofs  << "" << "\t|";  // memory
-    *ofs  << "\n";
+    *ofs  << endl;
     return true;
 }

@@ -12,5 +12,4 @@ build/conaninfo.txt
 .idea/fileTemplates/
 CMakeFiles/
 bin/
-ci_gitlab_gcc/__pycache__/
-stats/
+!stats/

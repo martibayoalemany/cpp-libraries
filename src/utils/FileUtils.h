@@ -9,10 +9,11 @@
 #include "DataFile.h"
 
 class FileUtils  {
-    ofstream* _ofstream;
+    const bool VERBOSE = false;
 public:
     FileUtils() = default;
     virtual ~FileUtils() = default;
+
 
     bool openStats();
     /// "name\t | shuffle\t | elements \t| duration_ms\t | p_duration_s\t | p_duration_ns\t | memory\t";
