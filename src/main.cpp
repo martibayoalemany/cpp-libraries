@@ -174,7 +174,7 @@ void doApiChecks() {
             [&]() {copy(dataPtr.get()->begin(), dataPtr.get()->end(), back_inserter(dataCopy));});
 
     cout << "Vector size: " << dataCopy.size() << endl;
-    int elements = dataCopy.size() / 10;
+    int elements = dataCopy.size();
     stringstream desc1;
     desc1 << "Copy " << elements << " elements:";
 
@@ -195,6 +195,7 @@ void doApiChecks() {
      Sort all elements
      */
     stringstream desc2;
+    elements = dataCopy.size();
     desc2 << "Sort " << elements << " elements:";
 
     time_it(desc2.str(),
