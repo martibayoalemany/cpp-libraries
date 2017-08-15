@@ -1,0 +1,15 @@
+modules/*
+CMakeFiles/*
+bin/*
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+3rdParty
+3rdParty/*
+data/*.txt
+build/conanbuildinfo.cmake
+build/conaninfo.txt
+.idea/fileTemplates/
+CMakeFiles/
+bin/
+!stats/
