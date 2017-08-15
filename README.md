@@ -9,6 +9,6 @@
 source ~/.venv3/bin/activate
 cd build
 conan install .. -g cmake
-cmake -C gcc_compiler.txt .
+cmake -C gcc_7_compiler.txt .
 make
 ```
