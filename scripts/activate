@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+
+#
+# CMakeLists
+######
+function run() {
+    source ~/.venv3/bin/activate
+    cd $ROOT_PATH
+    cd build
+    conan install .. -g cmake
+    cd ..
+    cmake .
+    make
+    bin/std_lib
+}
+
+function run_gcc_7() {
+  if ! which gcc-7 > /dev/null; then
+    sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+    sudo apt-get update
+    sudo apt-get install gcc-7
+    gcc-7 --version
+  fi
+  
+  cmake -DCMAKE_USER_MAKE_RULES_OVERRIDE=gcc_7_compiler.txt
+  run
+}
+
+#
+# Travis does not has coreutils/realpath
+######
+
+function set_env() {
+    if  ! which realpath >/dev/null; then
+        echo  'coreutils is not installed, realpath and dirname are not available'
+        export SCRIPT_PATH=${BASH_SOURCE%/*}
+        export ROOT_PATH=${SCRIPT_PATH%/*}
+        export REQUIREMENTS_JAVA_PATH=$ROOT_PATH/requirements_java
+
+        echo BASH_SOURCE: $BASH_SOURCE
+        echo \$0\: $0
+        echo SCRIPT_PATH: $SCRIPT_PATH 
+        echo ROOT_PATH: $ROOT_PATH  
+        echo REQUIREMENTS_JAVA_PATH: $REQUIREMENTS_JAVA_PATH
+        echo --------------------------
+    else
+        export SCRIPT_PATH=$(realpath $(dirname $BASH_SOURCE))
+        export ROOT_PATH=$(realpath $SCRIPT_PATH/..)
+        export REQUIREMENTS_JAVA_PATH=$ROOT_PATH/requirements_java
+
+        echo BASH_SOURCE: $(realpath $BASH_SOURCE)
+        echo \$0\: $(realpath $0)
+        echo SCRIPT_PATH: $SCRIPT_PATH 
+        echo ROOT_PATH: $ROOT_PATH  
+        echo REQUIREMENTS_JAVA_PATH: $REQUIREMENTS_JAVA_PATH
+        echo --------------------------
+    fi
+}
+
+#  Dependencies (pip, grape, mvn)
+####
+
+function requirements_init_grape() {    
+    cat $ROOT_PATH/requirements_java.txt  | awk -F':' '{print $1 " " $2}' | xargs -n2 grape install
+}
+
+function requirements_init_maven() {        
+    if ! which mvn > /dev/null; then
+        sudo apt install maven -y
+    fi
+    [ ! -e $REQUIREMENTS_JAVA_PATH ] && mkdir  $REQUIREMENTS_JAVA_PATH || echo  Script: $SCRIPT_PATH Root: $ROOT_PATH Requirements: $REQUIREMENTS_JAVA_PATH      
+    echo cat $REQUIREMENTS_JAVA_FILE | egrep -v "^#" | xargs -I{} mvn dependency:copy -DoutputDirectory=$REQUIREMENTS_JAVA_PATH -Dartifact={}:jar:sources
+}
+
+##
+#  Git commands
+####
+
+function git_revert() {    
+    # Tries to revert a file using the latest revision in git
+    
+    echo $0 " " $1
+    git checkout $(git rev-list -n 1 HEAD -- $1) -- $1
+}
+
+
+function git_log() {
+   git log --graph --pretty=format:'%C(Red) %h %C(Yellow) %s'
+}
+
+function git_ignore_untracked() {
+    for an_arg in "$@" ; do
+      echo "${an_arg}"
+     done
+    git status  | sed '1,/Untracked/d' | grep -v '(use' | sed -e 's/\W\(.*\)/\1/g' | tee -a .gitignore
+}
+
+##
+#  File commands
+####
+function ls_recursive_no_ext() {
+    pushd .
+    cd $ROOT_PATH
+    find `pwd` src -type f ! -name '*.*' | grep -v ".git"
+    popd
+}
+
+##
+#  Python commands
+####
+function py_init() {
+
+    touch ${ROOT_PATH}/requirements.txt
+    touch ${ROOT_PATH}/requirements_3_5.txt
+
+    if ! which python3 > /dev/null; then
+       sudo apt install python3 -y
+    fi
+    
+    if ! which pyvenv > /dev/null; then
+       sudo apt install python3-venv
+    fi
+
+    if ! which pip > /dev/null; then
+       sudo apt install python-pip -y
+    fi
+
+    cd $ROOT_PATH
+    # python 3
+    if [ ! -e ~/.venv3 ]; then
+        python3 -m venv ~/.venv3 
+    fi
+    source ~/.venv3/bin/activate
+    pip install --upgrade pip
+    pip install -r requirements_3_5.txt
+
+    if [ -e ${ROOT_PATH}/requirements.txt ] >/dev/null; then
+        # python 2.7
+        if [ ! -e ~/.venv27 ]; then
+            virtualenv ~/.venv27
+        fi
+        source ~/.venv27/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+    fi
+}
+
+function pip_ins_free() {
+    [ $(python --version | cut -d' ' -f2 | sed -e 's/.*\(3\.5\).*/\1/g')='3.5' ] && requirements='requirements_3_5.txt' || requirements='requirements.txt'
+    echo $1
+    touch $requirements
+    pip install $1    
+    [ $?=0 ] && (pip freeze | grep $1 | tee -a $ROOT_PATH/$requirements) || echo installation of $1 failed
+    echo $requirements
+}
+
+##
+# Functs
+####
+function ls_functs() {
+    declare -F | cut -d' ' -f3 | egrep --invert-match '^(?_)' 
+}
+
+ls_functs
+set_env

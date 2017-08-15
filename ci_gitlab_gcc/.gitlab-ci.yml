@@ -1,0 +1,32 @@
+
+variables:
+    CONAN_USERNAME: "user"
+    CONAN_REFERENCE: "cpp_libraries/1.0.0"
+    CONAN_CHANNEL: "stable"
+    CONAN_LOGIN_USERNAME: "user"
+    
+.build-template: &build-template
+    before_script:
+        - sudo pip install --upgrade conan_package_tools
+        - conan user
+    script:
+        - python build.py
+
+gcc-4.9:
+    image: lasote/conangcc49
+    variables:
+        CONAN_GCC_VERSIONS: "4.9"
+    <<: *build-template
+
+gcc-5.4:
+    image: lasote/conangcc54
+    variables:
+        CONAN_GCC_VERSIONS: "5.4"
+    <<: *build-template
+
+gcc-6.3:
+    image: lasote/conangcc63
+    variables:
+        CONAN_GCC_VERSIONS: "6.3"
+    <<: *build-template
+
