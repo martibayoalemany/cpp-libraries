@@ -16,3 +16,4 @@ bin/
 ci_gitlab_gcc
 .idea/markdown-exported-files.xml
 data/*.db
+*.swp
