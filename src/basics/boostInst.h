@@ -7,9 +7,7 @@ using namespace std;
 
 class boostInst {
     public:
-        boostInst() {
-            cout << "Constructor" << endl;
-        }
+        boostInst() = default;
 
         boostInst(const boostInst& other) noexcept = default;
 

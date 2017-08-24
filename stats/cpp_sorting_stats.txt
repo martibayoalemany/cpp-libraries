@@ -2377,3 +2377,14 @@ sort	|	|19960000	|11593	|	|	|	|
 sort	|	|19970000	|12864	|	|	|	|
 sort	|	|19980000	|12178	|	|	|	|
 sort	|	|19990000	|12274	|	|	|	|
+name	 | shuffle	 | elements 	| duration_ms	 | p_duration_s	 | p_duration_ns	 | memory	
+-----	 | -----	 | ----- 	| -----	 | -----	 | -----	 | -----	
+sort	|	|10000	|3	|	|	|	|
+name	 | shuffle	 | elements 	| duration_ms	 | p_duration_s	 | p_duration_ns	 | memory	
+-----	 | -----	 | ----- 	| -----	 | -----	 | -----	 | -----	
+name	 | shuffle	 | elements 	| duration_ms	 | p_duration_s	 | p_duration_ns	 | memory	
+-----	 | -----	 | ----- 	| -----	 | -----	 | -----	 | -----	
+name	 | shuffle	 | elements 	| duration_ms	 | p_duration_s	 | p_duration_ns	 | memory	
+-----	 | -----	 | ----- 	| -----	 | -----	 | -----	 | -----	
+name	 | shuffle	 | elements 	| duration_ms	 | p_duration_s	 | p_duration_ns	 | memory	
+-----	 | -----	 | ----- 	| -----	 | -----	 | -----	 | -----	

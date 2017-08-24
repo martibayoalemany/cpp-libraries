@@ -51,6 +51,10 @@ const string FileUtils::getStatsFile()  {
     return this->getStatsFile(curDir);
 }
 
+/**
+ * Delivers a path to the stats files depending <b>2</b> folders up to the
+ * <b>binary_path</b> given as a parameter
+ */
 const string FileUtils::getStatsFile(string binary_path) {
     // Cut binary path one level
     stringstream ss_regex;
@@ -72,13 +76,11 @@ const string FileUtils::getStatsFile(string binary_path) {
             cout << " No match " << endl;
     }
 
-    //auto p = boost::date_time::second_clock::local_time();
-
-    // Check whether the stats directory exists
+    // Checks whether the stats directory exists
+    /*
     stringstream ss1;
     ss1 << pieces_match[1] <<  "/stats";
 
-    /*
     if(!fs::exists(ss1.str()) || ! fs::is_directory(ss1.str())) {
         auto exc = std::make_exception_ptr(new custom_exception("nesting parameter might be wrong"));
         std::rethrow_exception(exc);
@@ -97,23 +99,23 @@ const string FileUtils::getStatsFile(string binary_path) {
 
 bool FileUtils::openStats() {
     string stats = getStatsFile();
-    ofstream* _ofstream = new ofstream();
-    _ofstream->open(stats, std::ofstream::out | std::ofstream::app);
-    if(!_ofstream->is_open()) {
+    auto ofs = make_unique<ofstream>();
+    ofs->open(stats, std::ofstream::out | std::ofstream::app);
+    if(!ofs->is_open()) {
         cout << "File not opened" << endl;
         return false;
     }
     stringstream headerStream;
     headerStream << "name\t | shuffle\t | elements \t| duration_ms\t | p_duration_s\t | p_duration_ns\t | memory\t" << endl;
     headerStream << "-----\t | -----\t | ----- \t| -----\t | -----\t | -----\t | -----\t" << endl;
-    *_ofstream << headerStream.str();
-    _ofstream->close();
+    *ofs << headerStream.str();
+    ofs->close();
     return true;
 }
 
 bool FileUtils::writeStats(string name, int elements, int ms) {
     string stats = getStatsFile();
-    ofstream* ofs = new ofstream();
+    auto ofs = make_unique<ofstream>();
     ofs->open(stats, std::ofstream::out | std::ofstream::app);
     if(!ofs->is_open()) {
         cout << "File not opened" << endl;

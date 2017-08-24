@@ -32,8 +32,8 @@ conan_basic_setup()
 file(GLOB_RECURSE SOURCE_FILES src/*.cpp )
 file(GLOB_RECURSE HEADER_FILES src/*.h )
 
-list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitInst.cpp)
-list(REMOVE_ITEM HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitInst.h)
+list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitImpl.cpp)
+list(REMOVE_ITEM HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitImpl.h)
 
 foreach(var IN ITEMS ${SOURCE_FILES})
     MESSAGE("${var}")

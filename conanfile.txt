@@ -1,6 +1,7 @@
 [requires]
 Boost/1.64.0@inexorgame/stable
 Fruit/2.0.4@thinkrapido/fruit
+sqlite3/3.18.0@jgsogo/stable
 
 #googletest/1.8.0@astrohawk/stable
 #gmock/1.8.0@meshell/stable

@@ -12,6 +12,7 @@
 #include "hpp/custom_exception.hpp"
 #include "utils/DataFile.h"
 #include "utils/FileUtils.h"
+#include "basics/FruitImpl.h"
 
 using namespace std;
 using namespace chrono;
@@ -23,6 +24,9 @@ jmp_buf long_jump_reference;
 
 volatile sig_atomic_t signal_handling_result = 0;
 
+/**
+ * It printf the signal received and sets the long_jump_reference to 1 so reentry does not occur
+ */
 void signal_action_handler(int sig, siginfo_t* info, void*) {
     std::stringstream log;
 
@@ -37,7 +41,10 @@ void signal_action_handler(int sig, siginfo_t* info, void*) {
     longjmp(long_jump_reference, 1);
 }
 
-int time_it(string desc, std::function<void()> funct) {
+/**
+ * Measures the time in milliseconds of a <b>function with no parameters</b>
+ */
+int time_it(string desc, function<void()> funct) {
     cl_point start = cl::now();
     funct();
     cl_point end = cl::now();
@@ -46,6 +53,9 @@ int time_it(string desc, std::function<void()> funct) {
     return ms;
 }
 
+/**
+ * Measures the time in milliseconds of a <b>function with no parameters and return value T</b>
+ */
 template <class T>
 T time_it_supplier(string desc, std::function<T()> funct) {
     cl_point start = cl::now();
@@ -60,13 +70,17 @@ tuple<int, int, int> foo() {
 };
 
 template<typename T>
-void for_each_n_print(vector<T> v, size_t size) {
+void for_each_n_print(vector<T>& v, size_t size) {
+    // Not implemented exception
     auto exc = std::make_exception_ptr(new custom_exception());
     std::rethrow_exception(exc);
 }
 
+/**
+ * It prints all elements of a vector
+ */
 template<>
-void for_each_n_print<int>(vector<int> v, size_t size) {
+void for_each_n_print<int>(vector<int>& v, size_t size) {
     using Iter = vector<int>::iterator;
     int i = 0;
     for(Iter it = v.begin(); i < size; it++, i++)
@@ -75,6 +89,9 @@ void for_each_n_print<int>(vector<int> v, size_t size) {
     cout << "=======" << endl;
 }
 
+/**
+ * Increments one all element contained in the ellipsis
+ */
 template<typename... T>
 tuple<T ...> increment(T... its) {
     return make_tuple((++its)...);
@@ -100,78 +117,114 @@ ostream& operator<<(ostream& out, const std::tuple<Args...>& t) {
     return out << ')';
 }
 
-void safeApiChecks();
 void doApiChecks();
 
-int main(int argc, char **argv) {
-
-    safeApiChecks();
-    //doApiChecks();
+template<class T>
+fruit::Component<T> getFruitComponent() {
+    return fruit::createComponent()
+            //.addMultibinding<Listener, AListener>()
+            //.addMultibinding<Listener, SomeOtherListener>()
+            //.bind<Notifier, NotifierImpl>()
+            .bind<Fruit, FruitImpl>();
 }
 
-void safeApiChecks() {
+int main(int argc, char **argv) {
     struct sigaction act;
     sigemptyset(&act.sa_mask);
     act.sa_sigaction = signal_action_handler;
     act.sa_flags = SA_SIGINFO;
     sigaction(SIGABRT, &act, 0);
 
-    if (setjmp(long_jump_reference) == 0)
+    if (setjmp(long_jump_reference) == 0) {
         doApiChecks();
-}
 
-/**
- * It generates a SIG_ABORT with gcc
- */
-void doAbort() {
-    shared_ptr<NonSharedDataFile> shareNSD = make_shared<NonSharedDataFile>();
-    try {
-        shared_ptr<NonSharedDataFile> shareNSD2 = shareNSD->getPtr();
-    } catch(bad_weak_ptr& e) {
-        cout << e.what() << endl;
+        // TODO: fix linkage errors with fruit
+        /*
+        {
+            fruit::Injector<Fruit> injector(getFruitComponent<Fruit>());
+            Fruit* fruit = injector.get<Fruit*>();
+            fruit->notify();
+        }
+         */
     }
 }
 
 void doApiChecks() {
 
-    // Checking templated elipsis ...
-    auto vs = increment(1,2,3,4, 102);
+    /// Checking iterator ...
+    {
+        map<int, char> m = {{10, 'c'},
+                            {20, 'd'},
+                            {34, 'e'},
+                            {50, 'e'},
+                            {60, 'e'},
+                            {80, 'e'}};
+        const int bound = 60;
+        auto iterator = m.lower_bound(30);
+        cout << iterator->first << " " << iterator->second << endl;
+        iterator++;
+        cout << iterator->first << " " << iterator->second << endl;
+    }
+
+    /// Checking templated elipsis ...
+    auto vs = increment(1, 2, 3, 4, 102);
     cout << get<0>(vs) << '\t' << get<1>(vs);
     cout << endl;
     cout << vs << endl;
 
-    /// Checking shared_ptr.use_count()
-    //doAbort();
-    shared_ptr<DataFile<int>> shareSD = make_shared<DataFile<int>>();
-    shared_ptr<DataFile<int>> shareSD2 = shareSD->getptr();
-    shared_ptr<DataFile<int>> shareSD3 = shareSD2;
-    shared_ptr<DataFile<int>> shareSD8 = shareSD3;
-    shared_ptr<DataFile<int>> shareSD9 = shareSD8;
-    cout << "Shared pointer referencing " << shareSD2.use_count() << " - " << shareSD3.use_count() << endl;
-    {
-        weak_ptr<DataFile<int>> shareSD12 = shareSD3;
-        shared_ptr<DataFile<int>> shareSD13 = shareSD3;
-        cout << "With weak pointer and shared_ptr " << shareSD3.use_count() << " - " << shareSD8.use_count() << endl;
+    /// Checking shared_ptr pointer for a non shared class
+    shared_ptr<NonSharedDataFile> shared1 = make_shared<NonSharedDataFile>();
+    try {
+        shared_ptr<NonSharedDataFile> shared2 = shared1;
+        cout << "doCheckSharedPtr " << shared1.use_count()  << " - " << shared2.use_count()<< endl;
+    } catch(bad_weak_ptr& e) {
+        cout << e.what() << endl;
     }
-    cout << shareSD3.use_count() << endl;
+
+    /// Checking shared_ptr.use_count() and weak pointer
+    weak_ptr<DataFile<int>> weakPtr;
+    {
+        auto sharedPtr = make_shared<DataFile<int>>();
+        auto sharedPtr1 = sharedPtr;
+        auto sharedPtr2 = sharedPtr1;
+        cout << "Shared pointer referencing (3) <=> " << sharedPtr.use_count() << endl;
+        auto sharedPtr3 = sharedPtr2;
+        auto sharedPtr5 = sharedPtr3;
+        auto sharedPtr8 = sharedPtr5;
+        weakPtr = sharedPtr;
+        cout << "Shared pointer referencing (6) <=> " << sharedPtr.use_count() << endl;
+
+        if(auto tmp = weakPtr.lock())
+            cout << tmp->getDataFile() << endl;
+        else
+            cout << "Weak pointer expired";
+
+        sharedPtr.reset();
+        cout << "Shared pointer referencing  =? " << sharedPtr.use_count() << endl;
+        cout << "Shared pointer referencing 3  =? " << sharedPtr3.use_count() << endl;
+    }
+
+    if(!weakPtr.expired())
+        cout << weakPtr.lock().use_count() << endl;
+    else
+        cout << "Weak pointer expired";
 
     /// Read ints and timeit
     using DF = DataFile<int>;
     unique_ptr<DF> dataSource = time_it_supplier<unique_ptr<DF>>("DataFile constructor : ",
                                                                  []() { return make_unique<DF>();});
 
-    const string  dataFile = dataSource->getDataFile();
+    const string dataFile = dataSource->getDataFile();
     cout << "---- " << dataFile << " " << &dataFile << " ";
     cout << sizeof(dataFile.c_str()[0]) << endl;
 
     using vectorPtr = shared_ptr<vector<int>>;
     vectorPtr dataPtr = time_it_supplier<vectorPtr>("Load file: ",
                                                     [&] () { return dataSource.get()->getDataPtr();});
-    vectorPtr  dataPtr2 = dataPtr;
-    cout << "Shared pointer count: " << dataPtr2.use_count() << endl;
+
     vector<int> dataCopy;
     time_it("Copy vector: ",
-            [&]() {copy(dataPtr.get()->begin(), dataPtr.get()->end(), back_inserter(dataCopy));});
+            [&]() {copy(dataPtr->begin(), dataPtr->end(), back_inserter(dataCopy));});
 
     cout << "Vector size: " << dataCopy.size() << endl;
     int elements = dataCopy.size();
@@ -180,15 +233,30 @@ void doApiChecks() {
 
     vector<int> dataCopyReduced;
     time_it(desc1.str(),
-            [&]() {copy_n(dataPtr.get()->begin(), elements, back_inserter(dataCopyReduced));});
+            [&]() {copy_n(dataPtr->begin(), elements, back_inserter(dataCopyReduced));});
     for_each_n_print(dataCopyReduced, 20);
 
-    /// Exception double is not implemented
+    /// for_each_n_print<double> is not implemented
     try {
         vector<double> doubleCheck = {1.2, 3.4};
         for_each_n_print(doubleCheck, 2);
     } catch(...) {
-        cout << "Double check okey " << endl;
+        cout << "for_each_n_print<double> is not implemented" << endl;
+    }
+
+    /// for_each_n_print<string> is not implemented
+    try {
+        vector<string> stringCheck = {"adsad", "asdasd"};
+        for_each_n_print(stringCheck, 2);
+    }
+    catch (const exception& exc) {
+        cout << "catch (exception& exc) " << exc.what() << endl;
+    }
+    catch(custom_exception& exc) {
+        cout << "catch (custom_exception&) " << exc.what() << endl;
+    }
+    catch(const custom_exception* exc) {
+        cout << "catch (custom_exception*) " << exc->what() << endl;
     }
 
     /***
@@ -221,7 +289,7 @@ void doApiChecks() {
 
         desc_iteration.clear();
         desc_iteration.str(string());
-        desc_iteration << "!!! Sort !!!" <<  el_it << " elements:";
+        desc_iteration << "Sort " <<  el_it << " elements:";
         int sorted_in_ms = time_it(desc_iteration.str(),
                 [&]() { sort(localCopy.begin(), localCopy.end(), greater<int>()); });
 
