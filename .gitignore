@@ -19,3 +19,4 @@ data/*.db
 *.swp
 .idea/workspace.xml
 3rdParty/*
+.idea/dbnavigator.xml
