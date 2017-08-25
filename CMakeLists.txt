@@ -32,8 +32,8 @@ conan_basic_setup()
 file(GLOB_RECURSE SOURCE_FILES src/*.cpp )
 file(GLOB_RECURSE HEADER_FILES src/*.h )
 
-list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitImpl.cpp)
-list(REMOVE_ITEM HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitImpl.h)
+#list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitImpl.cpp)
+#list(REMOVE_ITEM HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/basics/FruitImpl.h)
 
 foreach(var IN ITEMS ${SOURCE_FILES})
     MESSAGE("${var}")
@@ -45,7 +45,7 @@ foreach(var IN ITEMS ${CONAN_INCLUDE_DIRS})
 endforeach()
 
 #include_directories(${HEADER_FILES})
-add_executable(std_lib ${SOURCE_FILES} ${HEADER_FILES} src/utils/_DataFile.cpp src/utils/_DataFile.h src/utils/FileUtils.cpp src/utils/FileUtils.h)
+add_executable(std_lib ${SOURCE_FILES} ${HEADER_FILES})
 	
-#target_link_libraries(std_lib ${CONAN_LIBS})
+target_link_libraries(std_lib ${CONAN_LIBS})
 

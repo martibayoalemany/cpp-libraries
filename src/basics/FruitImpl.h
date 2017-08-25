@@ -44,7 +44,7 @@ public:
 
 class Fruit {
 public:
-    Fruit() = default;
+    //Fruit() = default;
     virtual void notify() = 0;
 };
 
@@ -54,18 +54,20 @@ class FruitImpl : public Fruit
     int n;
 
 public:
+
     FruitImpl(Notifier* notifier, int n) : notifier(notifier), n(n) {
 
     };
 
     using Inject = FruitImpl(Notifier*, fruit::Assisted<int>);
 
+    using Inject = FruitImpl();
 
     ~FruitImpl()  {
 
     };
 
-    void notify() {
+    void notify() override {
         //fruit::NormalizedComponent<Listener> normComp(getListenerComponent);
         //fruit::Injector<Listener> injector(getListenerComponent);
         //const std::vector<Listener *> &listeners = injector.getMultibindings<Listener>();

@@ -136,12 +136,12 @@ int main(int argc, char **argv) {
     sigaction(SIGABRT, &act, 0);
 
     if (setjmp(long_jump_reference) == 0) {
-        doApiChecks();
         {
             fruit::Injector<Fruit> injector(getFruitComponent<Fruit>());
-            Fruit* fruit = injector.get<Fruit*>(20);
+            Fruit* fruit = injector.get<Fruit*>();
             fruit->notify();
         }
+        doApiChecks();
     }
 }
 

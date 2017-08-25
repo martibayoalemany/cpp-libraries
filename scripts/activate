@@ -49,7 +49,11 @@ function set_env() {
         export REQUIREMENTS_JAVA_PATH=$ROOT_PATH/requirements_java
 
         echo BASH_SOURCE: $(realpath $BASH_SOURCE)
-        echo \$0\: $(realpath $0)
+        echo \$0\: $0
+        echo SCRIPT_DIR: ${BASH_SOURCE%/*}
+        echo SCRIPTS_PART2: ${BASH_SOURCE%/*/*}
+        echo SCRIPTS_PART3: ${BASH_SOURCE##*/}
+        echo SCRIPTS_PART5: $BASH_SOURCE
         echo SCRIPT_PATH: $SCRIPT_PATH 
         echo ROOT_PATH: $ROOT_PATH  
         echo REQUIREMENTS_JAVA_PATH: $REQUIREMENTS_JAVA_PATH
@@ -75,6 +79,10 @@ function requirements_init_maven() {
 ##
 #  Git commands
 ####
+
+function init_submodules() {
+    git submodule add -f https://github.com/google/fruit $ROOT_PATH/3rdParty/fruit
+}
 
 function git_revert() {    
     # Tries to revert a file using the latest revision in git
