@@ -1,0 +1,33 @@
+branches:
+  only:
+  - master
+dist: trusty
+language: cpp
+matrix:
+  fast_finish: true
+  include:
+  - compiler: gcc
+    env: COMPILER=gcc-6 UBUNTU=17.04
+    install: export COMPILER='gcc-6'; export UBUNTU='17.10'; scripts/cmake_helper.sh'
+    os: linux
+    script: export COMPILER='gcc-6'; export UBUNTU='17.10'; scripts/compile.sh
+  - compiler: gcc
+      env: COMPILER=gcc-7 UBUNTU=17.04
+      install: export COMPILER='gcc-7'; export UBUNTU='17.10'; scripts/cmake_helper.sh'
+      os: linux
+      script: export COMPILER='gcc-7'; export UBUNTU='17.10'; scripts/compile.sh
+
+  - compiler: gcc
+      env: COMPILER=gcc-6 UBUNTU=16.04
+      install: export COMPILER='gcc-6'; export UBUNTU='16.04'; scripts/cmake_helper.sh'
+      os: linux
+      script: export COMPILER='gcc-6'; export UBUNTU='16.04'; scripts/compile.sh
+  - compiler: gcc
+      env: COMPILER=gcc-7 UBUNTU=16.04
+      install: export COMPILER='gcc-7'; export UBUNTU='16.04'; scripts/cmake_helper.sh'
+      os: linux
+      script: export COMPILER='gcc-7'; export UBUNTU='16.04'; scripts/compile.sh
+services:
+- docker
+sudo: required
+

@@ -46,7 +46,17 @@
 				<Compiler>
 					<Add directory="/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"/>
 					<Add directory="/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
-					<Add directory="/home/username/.conan/data/sqlite3/3.18.0/jgsogo/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtCore"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtDBus"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtGui"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtNetwork"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtOpenGL"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtSql"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtTest"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtWidgets"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtXml"/>
 					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
 					<Add directory="/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include"/>
 					<Add directory="/usr/include/c++/6"/>
@@ -74,7 +84,17 @@
 				<Compiler>
 					<Add directory="/home/username/.conan/data/Boost/1.64.0/inexorgame/stable/package/ef95892a18529dd911867b4a44198c7e19849731/include"/>
 					<Add directory="/home/username/.conan/data/Fruit/2.0.4/thinkrapido/fruit/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
-					<Add directory="/home/username/.conan/data/sqlite3/3.18.0/jgsogo/stable/package/4cc931e24e37948d83aaaf638aeca02991ff6d08/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtConcurrent"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtCore"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtDBus"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtGui"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtNetwork"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtOpenGL"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtSql"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtTest"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtWidgets"/>
+					<Add directory="/home/username/.conan/data/Qt/5.8.0/osechet/stable/package/256d905d3d4e6f2ada377c464ed78a14d96c6793/include/QtXml"/>
 					<Add directory="/home/username/.conan/data/bzip2/1.0.6/lasote/stable/package/880e5642afc26dae7f4019501d6632b3a6dba009/include"/>
 					<Add directory="/home/username/.conan/data/zlib/1.2.11/lasote/stable/package/3fc896c7ead7e99000454751b38b866b14fe6459/include"/>
 					<Add directory="/usr/include/c++/6"/>

@@ -1,13 +1,13 @@
 [requires]
 Boost/1.64.0@inexorgame/stable
 Fruit/2.0.4@thinkrapido/fruit
+Qt/5.8.0@osechet/stable
 
 # sqlite3/3.18.0@jgsogo/stable
 # googletest/1.8.0@astrohawk/stable
 # gmock/1.8.0@meshell/stable
 # OpenCV/3.2.0@ohhi/stable
 # opengl/10.0.10240.0@lasote/vcpkg
-# Qt/5.8.0@osechet/stable
 # vulkan-sdk/1.0.30.0@alaingalvan/testing
 
 [options]

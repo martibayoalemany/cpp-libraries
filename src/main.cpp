@@ -119,14 +119,6 @@ ostream& operator<<(ostream& out, const std::tuple<Args...>& t) {
 
 void doApiChecks();
 
-template<class T>
-fruit::Component<T> getFruitComponent() {
-    return fruit::createComponent()
-            //.addMultibinding<Listener, AListener>()
-            //.addMultibinding<Listener, SomeOtherListener>()
-            //.bind<Notifier, NotifierImpl>()
-            .bind<Fruit, FruitImpl>();
-}
 
 int main(int argc, char **argv) {
     struct sigaction act;
@@ -137,9 +129,14 @@ int main(int argc, char **argv) {
 
     if (setjmp(long_jump_reference) == 0) {
         {
+
             fruit::Injector<Fruit> injector(getFruitComponent<Fruit>());
             Fruit* fruit = injector.get<Fruit*>();
             fruit->notify();
+
+            const std::vector<IListener *> &listeners = injector.getMultibindings<IListener>();
+            for(IListener* listener : listeners)
+                listener->notify();
         }
         //doApiChecks();
     }
