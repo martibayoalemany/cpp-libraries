@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c461d6ab-ca82-475d-9e9d-516d30c9ba44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conanfile.txt" afterPath="$PROJECT_DIR$/conanfile.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/activate" afterPath="$PROJECT_DIR$/scripts/activate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/sqlite_sorting.sh" afterPath="$PROJECT_DIR$/scripts/sqlite_sorting.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/basics/FruitImpl.h" afterPath="$PROJECT_DIR$/src/basics/FruitImpl.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conanfile.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="conanfile.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conanfile.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -113,7 +109,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="random.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="random.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/random.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -464,12 +460,12 @@
       <workItem from="1503582466505" duration="1084000" />
       <workItem from="1503586185056" duration="10542000" />
       <workItem from="1503603241903" duration="7356000" />
-      <workItem from="1503648965332" duration="3008000" />
+      <workItem from="1503648965332" duration="3228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150615000" />
+    <option name="totallyTimeSpent" value="150835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,6 +478,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="24" width="1188" height="1056" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2609457" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -491,7 +488,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21898597" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21898597" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29881337" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -835,22 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/sqlite_sorting.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/random.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/activate">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -900,6 +881,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="2" lean-forward="false" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/sqlite_sorting.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/random.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
