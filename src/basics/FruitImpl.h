@@ -44,24 +44,19 @@ public:
 
 class Fruit {
 public:
-    //Fruit() = default;
     virtual void notify() = 0;
 };
 
 class FruitImpl : public Fruit
 {
-    Notifier* notifier;
+    Notifier* notifierImpl;
     int n;
 
 public:
 
-    FruitImpl(Notifier* notifier, int n) : notifier(notifier), n(n) {
+    INJECT(FruitImpl(ANNOTATED(NotifierImpl, Notifier*) notifierImpl )) : notifierImpl(notifierImpl) {
 
-    };
-
-    using Inject = FruitImpl(Notifier*, fruit::Assisted<int>);
-
-    using Inject = FruitImpl();
+    }
 
     ~FruitImpl()  {
 
@@ -72,8 +67,8 @@ public:
         //fruit::Injector<Listener> injector(getListenerComponent);
         //const std::vector<Listener *> &listeners = injector.getMultibindings<Listener>();
         const vector<Listener *> listeners;
-        if(notifier != nullptr)
-            notifier->notify(listeners);
+        if(notifierImpl != nullptr)
+            notifierImpl->notify(listeners);
         else
             cout << "Notifier not injected " << n << endl;
     }

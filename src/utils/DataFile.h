@@ -15,7 +15,7 @@ using namespace std;
 template <class T>
 class DataFile : public enable_shared_from_this<DataFile<T>> {
 
-    const char* DATA_FILENAME = "random_numbers_from_shuf.txt";
+    const char* DATA_FILENAME = "random_numbers.txt";
     vector<T> data;
 
     string getCurrentDir();

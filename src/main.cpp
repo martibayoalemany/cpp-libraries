@@ -141,7 +141,7 @@ int main(int argc, char **argv) {
             Fruit* fruit = injector.get<Fruit*>();
             fruit->notify();
         }
-        doApiChecks();
+        //doApiChecks();
     }
 }
 
@@ -222,11 +222,11 @@ void doApiChecks() {
     time_it("Copy vector: ",
             [&]() {copy(dataPtr->begin(), dataPtr->end(), back_inserter(dataCopy));});
 
+    /// copy only n elements
     cout << "Vector size: " << dataCopy.size() << endl;
     int elements = dataCopy.size();
     stringstream desc1;
     desc1 << "Copy " << elements << " elements:";
-
     vector<int> dataCopyReduced;
     time_it(desc1.str(),
             [&]() {copy_n(dataPtr->begin(), elements, back_inserter(dataCopyReduced));});
