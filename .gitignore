@@ -18,3 +18,4 @@ ci_gitlab_gcc
 data/*.db
 *.swp
 .idea/workspace.xml
+3rdParty/*
