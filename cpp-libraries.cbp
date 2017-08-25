@@ -106,6 +106,12 @@
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/BoostDi.h">
 			<Option target="std_lib"/>
 		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/FruitImpl.cpp">
+			<Option target="std_lib"/>
+		</Unit>
+		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/FruitImpl.h">
+			<Option target="std_lib"/>
+		</Unit>
 		<Unit filename="/home/username/src/src-gitlab/cpp-libraries/src/basics/boostInst.cpp">
 			<Option target="std_lib"/>
 		</Unit>

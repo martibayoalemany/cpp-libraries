@@ -1,0 +1,3 @@
+[submodule "3rdParty/fruit"]
+	path = 3rdParty/fruit
+	url = https://github.com/google/fruit
