@@ -54,18 +54,12 @@ class FruitImpl : public Fruit
     int n;
 
 public:
-    INJECT(FruitImpl()) = default;
-    //INJECT(FruitImpl(Notifier* notifier)) : notifier(notifier) {
-
-    //};
-    // INJECT(FruitImpl(Notifier* notifier, ASSISTED(int) n));
-    /*
-    FruitImpl(Notifier* notifier, int n) : notifier(notifier), n(n){
+    FruitImpl(Notifier* notifier, int n) : notifier(notifier), n(n) {
 
     };
-     */
 
-    //using Inject = FruitImpl(Notifier*, Assisted<int>);
+    using Inject = FruitImpl(Notifier*, fruit::Assisted<int>);
+
 
     ~FruitImpl()  {
 
@@ -79,7 +73,7 @@ public:
         if(notifier != nullptr)
             notifier->notify(listeners);
         else
-            cout << "Notifier not injected" << endl;
+            cout << "Notifier not injected " << n << endl;
     }
 
 

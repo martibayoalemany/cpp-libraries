@@ -137,15 +137,11 @@ int main(int argc, char **argv) {
 
     if (setjmp(long_jump_reference) == 0) {
         doApiChecks();
-
-        // TODO: fix linkage errors with fruit
-        /*
         {
             fruit::Injector<Fruit> injector(getFruitComponent<Fruit>());
-            Fruit* fruit = injector.get<Fruit*>();
+            Fruit* fruit = injector.get<Fruit*>(20);
             fruit->notify();
         }
-         */
     }
 }
 
